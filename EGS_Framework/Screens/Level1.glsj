@@ -1,0 +1,36 @@
+{
+  "Tags": [
+    "GLUE"
+  ],
+  "Source": "GLUE",
+  "BaseScreen": "Screens\\GameScreen",
+  "BaseElement": "Screens\\GameScreen",
+  "ReferencedFiles": [
+    {
+      "Name": "GumProject/Screens/Level1Gum.gusx",
+      "IsSharedStatic": true,
+      "RuntimeType": "EGS_Framework.GumRuntimes.Level1GumRuntime",
+      "ProjectsToExcludeFrom": []
+    }
+  ],
+  "CustomVariables": [
+    {
+      "Properties": [
+        {
+          "Name": "Type",
+          "Value": "string",
+          "Type": "String"
+        },
+        {
+          "Name": "Category",
+          "Value": "Layer",
+          "Type": "String"
+        }
+      ],
+      "Name": "DefaultLayer",
+      "Category": "Layer"
+    }
+  ],
+  "Name": "Screens\\Level1",
+  "CustomClassesForExport": []
+}
