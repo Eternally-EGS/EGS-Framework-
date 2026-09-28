@@ -12,8 +12,8 @@ namespace EGS_Framework.Core.Debug
         public static List<string> Output = new List<string>();
         private static string allLet = "";
 
-        private static Microsoft.Xna.Framework.Color Background_Color = new Microsoft.Xna.Framework.Color(84, 84, 84, 100);
-        private static Microsoft.Xna.Framework.Color InputString_Color = new Microsoft.Xna.Framework.Color(255, 0, 0, 100);
+        private static Microsoft.Xna.Framework.Color Background_Color = new Microsoft.Xna.Framework.Color(84, 84, 84, 200);
+        private static Microsoft.Xna.Framework.Color InputString_Color = new Microsoft.Xna.Framework.Color(255, 0, 0, 200);
         
         public static void GetConsole()
         {

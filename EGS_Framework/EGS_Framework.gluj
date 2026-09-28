@@ -88,7 +88,11 @@
       "Name": "Screens\\Level1"
     }
   ],
-  "EntityReferences": [],
+  "EntityReferences": [
+    {
+      "Name": "Entities\\fdkf"
+    }
+  ],
   "Bookmarks": [],
   "PluginData": {
     "RequiredPlugins": []

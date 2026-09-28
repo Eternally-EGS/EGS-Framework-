@@ -31,6 +31,46 @@
       "Category": "Layer"
     }
   ],
+  "NamedObjects": [
+    {
+      "InstanceName": "fdkfList",
+      "SourceClassType": "FlatRedBall.Math.PositionedObjectList<T>",
+      "Properties": [
+        {
+          "Name": "AssociateWithFactory",
+          "Value": true,
+          "Type": "bool"
+        }
+      ],
+      "InstructionSaves": [],
+      "SourceType": 2,
+      "SourceFile": "PositionedObjectList (Generic)",
+      "SourceClassGenericType": "Entities\\fdkf",
+      "ExposedInDerived": true,
+      "AttachToContainer": true,
+      "GenerateTimedEmit": true,
+      "DefinedByBase": true,
+      "InstantiatedByBase": true,
+      "ContainedObjects": [
+        {
+          "InstanceName": "fdkf1",
+          "SourceClassType": "Entities\\fdkf",
+          "Properties": [
+            {
+              "Name": "AssociateWithFactory",
+              "Value": true,
+              "Type": "bool"
+            }
+          ],
+          "InstructionSaves": [],
+          "SourceType": 1,
+          "SourceFile": "Entities\\fdkf",
+          "AttachToContainer": true,
+          "GenerateTimedEmit": true
+        }
+      ]
+    }
+  ],
   "Name": "Screens\\Level1",
   "CustomClassesForExport": []
 }

@@ -8,12 +8,13 @@ namespace EGS_Framework.Core.Debug
         private DebugRect _background;
         private DebugWindowText _text;
         private float _windowX = 0;
+        private static DebugWindow _draggingWindow = null;
         private float _windowY = 0;
         private Func<string> _textFunc; 
 
         public DebugWindow(Func<string> textFunc) 
         {
-            _background = new DebugRect(200, 300, 100, -100, new Microsoft.Xna.Framework.Color(84, 84, 84, 100));
+            _background = new DebugRect(200, 300, 100, -100, new Microsoft.Xna.Framework.Color(84, 84, 84, 200));
             _text = new DebugWindowText(); 
             _textFunc = textFunc;
         }
@@ -34,15 +35,27 @@ namespace EGS_Framework.Core.Debug
             float borderedX = Math.Clamp(mouseX, minX, maxX);
             float borderedY = Math.Clamp(mouseY, minY, maxY);
 
-            if (IsMouseOver() && InputManager.Mouse.ButtonDown(Mouse.MouseButtons.LeftButton)) 
-            { 
+            bool mouseDown = InputManager.Mouse.ButtonDown(Mouse.MouseButtons.LeftButton);
+
+            if (_draggingWindow == null && mouseDown && IsMouseOver())
+            {
+                _draggingWindow = this;
+            }
+
+            if (_draggingWindow == this)
+            {
                 _windowX = borderedX;
                 _windowY = borderedY;
+
+                if (!mouseDown)
+                {
+                    _draggingWindow = null;
+                }
             }
 
             _background.Rect.X = _windowX;
             _background.Rect.Y = _windowY;
-        
+
             float textX = _background.Rect.X - (_background.Rect.Width / 2f);
             float textY = _background.Rect.Y + (_background.Rect.Height / 2f);
 

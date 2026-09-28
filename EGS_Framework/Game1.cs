@@ -69,7 +69,7 @@ namespace EGS_Framework
             // Custom Debug 
             DebugUpdate.Update();
             // KILLLL
-            if (InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.F5)) { ChangeFullscreen(); }
+            //if (InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.F5)) { ChangeFullscreen(); }
 
             base.Update(gameTime);
         }

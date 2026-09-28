@@ -167,7 +167,7 @@ namespace EGS_Framework.Core.Debug
         public void Draw(float value, float xoffset, float yoffset, float maxvalue)
         {
             if (Background == null) {
-                Background = new DebugRect(150, 100, xoffset, yoffset, new Microsoft.Xna.Framework.Color(84, 84, 84, 100));
+                Background = new DebugRect(150, 100, xoffset, yoffset, new Microsoft.Xna.Framework.Color(84, 84, 84, 200));
             }
 
             float halfWidthBackground = FlatRedBall.Camera.Main.OrthogonalWidth / 2f;
@@ -254,11 +254,6 @@ namespace EGS_Framework.Core.Debug
             currentText.Visible = true;
             currentText.DisplayText = _text;
             currentText.SetPixelPerfectScale(Camera.Main);
-
-            currentText.MaxWidth = 100;
-            currentText.MaxWidthBehavior = MaxWidthBehavior.Wrap;
-
-            float lineSpacing = _currentWindowLineIndex * 20f;
 
             currentText.X = xoffset;
             currentText.Y = yoffset;

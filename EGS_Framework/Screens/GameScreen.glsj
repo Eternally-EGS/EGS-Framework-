@@ -31,6 +31,24 @@
   ],
   "NamedObjects": [
     {
+      "InstanceName": "fdkfList",
+      "SourceClassType": "FlatRedBall.Math.PositionedObjectList<T>",
+      "Properties": [
+        {
+          "Name": "AssociateWithFactory",
+          "Value": true,
+          "Type": "bool"
+        }
+      ],
+      "InstructionSaves": [],
+      "SourceType": 2,
+      "SourceFile": "PositionedObjectList (Generic)",
+      "SourceClassGenericType": "Entities\\fdkf",
+      "ExposedInDerived": true,
+      "AttachToContainer": true,
+      "GenerateTimedEmit": true
+    },
+    {
       "InstanceName": "CameraControllingEntityInstance",
       "SourceClassType": "FlatRedBall.Entities.CameraControllingEntity",
       "Properties": [

@@ -20,6 +20,10 @@
     <None Remove="**\*.glsj" />
     <None Remove="**\*.glej" />
     <None Remove="**\*.gluj" />
+    <None Include="Content\Entities\fdkf\fgdg.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>fgdg</Name>
+    </None>
     <None Include="Content\GumProject\Components\Controls\ButtonClose.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>ButtonClose</Name>
@@ -323,6 +327,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataTypes\TileMapInfo.Generated.cs" />
+    <Compile Include="Entities\fdkf.cs" />
+    <Compile Include="Entities\fdkf.Generated.cs">
+      <DependentUpon>fdkf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Factories\fdkfFactory.Generated.cs" />
     <Compile Include="FileAliases.Generated.cs" />
     <Compile Include="Forms\Components\Controls\ItemsControlForms.Generated.cs" />
     <Compile Include="Forms\Screens\GameScreenGumForms.Generated.cs" />
