@@ -23,6 +23,7 @@ namespace EGS_Framework.Core.Debug
             case "HELP" : DebugConsole.Output.Clear(); DebugConsole.Output.AddRange(HELP());  break;
             case "CL" : DebugConsole.Output.Clear(); break;
             case "DOS" : DebugConsole.Output.Add(DOS(two)); break;
+            case "GOTO" : DebugConsole.Output.Add(GOTO(two)); break;
             case "SET" : DebugConsole.Output.Add(SET(two,three,four)); break;
             default: DebugConsole.Output.Add(ERR()); break;
             }
@@ -50,6 +51,45 @@ namespace EGS_Framework.Core.Debug
         // Placeholder 
         public static string ERR() {
             return "Command not found";
+        }
+
+        public static string GOTO(string Screen) 
+        {
+            if (string.IsNullOrEmpty(Screen))
+                return "Usage: GOTO <screen>";
+
+            string projectNamespace = FlatRedBall.Screens.ScreenManager.CurrentScreen.GetType().Namespace;
+            string fullScreenName = $"{projectNamespace}.{Screen.Trim()}";
+
+            Type screenType = null;
+
+            screenType = Type.GetType(fullScreenName);
+
+            if (screenType == null)
+            {
+                foreach (var asm in AppDomain.CurrentDomain.GetAssemblies())
+                {
+                    screenType = asm.GetType(fullScreenName);
+                    if (screenType != null) break;
+                }
+            }
+
+            if (screenType == null)
+                return $"Screen '{Screen}' not found";
+
+            if (!typeof(FlatRedBall.Screens.Screen).IsAssignableFrom(screenType))
+                return $"'{Screen}' is not a Screen";
+
+            try 
+            {   
+                FlatRedBall.Screens.ScreenManager.CurrentScreen.MoveToScreen(fullScreenName);
+            } 
+            catch (Exception ex) 
+            { 
+                return $"Error: {ex.Message}"; 
+            }
+
+            return "Command complete";
         }
 
 

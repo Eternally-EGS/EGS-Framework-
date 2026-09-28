@@ -58,6 +58,8 @@ namespace EGS_Framework
             base.Initialize();
         }
 
+        private FlatRedBall.Screens.Screen _lastScreen;
+
         protected override void Update(GameTime gameTime)
         {
             FlatRedBallServices.Update(gameTime);
@@ -66,10 +68,8 @@ namespace EGS_Framework
 
             GeneratedUpdate(gameTime);
             
-            // Custom Debug 
+            // Custom Debug
             DebugUpdate.Update();
-            // KILLLL
-            //if (InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.F5)) { ChangeFullscreen(); }
 
             base.Update(gameTime);
         }

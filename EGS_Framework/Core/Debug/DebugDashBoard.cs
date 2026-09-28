@@ -47,5 +47,15 @@ namespace EGS_Framework.Core.Debug
             _memoryGraph.Clear();
             _fpsGraph.Clear();
         }
+
+        public static void DashBoardAllClear() 
+        {
+            try { _frametimeGraph.Clear(); } catch { }
+            try { _memoryGraph.Clear(); } catch { }
+            try { _fpsGraph.Clear(); } catch { }
+
+            // Тексты дашборда (они в DebugDrawManager._debugTexts)
+            try { DebugDrawManager.RemoveDebugStatOnScreen(); } catch { }
+        }
     }
 }

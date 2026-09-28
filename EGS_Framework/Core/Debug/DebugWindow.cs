@@ -11,6 +11,8 @@ namespace EGS_Framework.Core.Debug
         private static DebugWindow _draggingWindow = null;
         private float _windowY = 0;
         private Func<string> _textFunc; 
+        private static readonly System.Collections.Generic.List<DebugWindow> _allWindows 
+        = new System.Collections.Generic.List<DebugWindow>();
 
         public DebugWindow(Func<string> textFunc) 
         {
@@ -105,6 +107,17 @@ namespace EGS_Framework.Core.Debug
 
             _windowX = 0;
             _windowY = 0;
+        }
+
+         public static void ClearAll()
+        {
+            var copy = new System.Collections.Generic.List<DebugWindow>(_allWindows);
+            foreach (var w in copy)
+            {
+                try { w.Close(); } catch { }
+            }
+            _allWindows.Clear();
+            _draggingWindow = null;
         }
     }
 }

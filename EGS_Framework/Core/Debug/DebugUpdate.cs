@@ -15,8 +15,20 @@ namespace EGS_Framework.Core.Debug
             {
                 window.UpdateAndDraw();
             }
-       
+            
 
+        }
+
+        public static void ClearAll() 
+        {
+            var copy = new List<DebugWindow>(debugWindows);
+            foreach (var window in copy)
+            {
+                try { window?.Close(); } catch { }
+            }
+            debugWindows.Clear();
+
+            DebugWindow.ClearAll();
         }
     
     }

@@ -121,5 +121,32 @@ namespace EGS_Framework.Core.Debug
                 InputString = null;
             }
         }
+
+        public static void RemoveAllConsole()
+        {
+            DebugDrawManager.RemoveDebugStatOnScreen();
+
+            try 
+            {
+                if (Background != null && Background.Rect != null)
+                    FlatRedBall.SpriteManager.RemoveSprite(Background.Rect);
+            } 
+            catch { }
+            Background = null;
+
+            try 
+            {
+                if (InputString != null && InputString.Rect != null)
+                    FlatRedBall.SpriteManager.RemoveSprite(InputString.Rect);
+            } 
+            catch { }
+            InputString = null;
+
+            Output.Clear();
+            Memory.Clear();
+            Memorycount = 0;
+            allLet = "";
+            _backDelay = 0;
+        }
     }
 }

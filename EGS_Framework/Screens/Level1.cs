@@ -13,6 +13,7 @@ using FlatRedBall.Math;
 using FlatRedBall.Math.Geometry;
 using FlatRedBall.Localization;
 using Microsoft.Xna.Framework;
+using EGS_Framework.Core.Debug;
 
 
 
@@ -33,7 +34,7 @@ namespace EGS_Framework.Screens
 
         private void CustomDestroy()
         {
-            
+            DebugCleanup.Clear();  
         }
 
         private static void CustomLoadStaticContent(string contentManagerName)

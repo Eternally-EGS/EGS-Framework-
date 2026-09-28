@@ -56,7 +56,6 @@ namespace EGS_Framework.Core.Debug
                 DebugDrawManager.Reset();
                 DebugConsole.GetConsole();
             }
-
         } 
     }
 }
