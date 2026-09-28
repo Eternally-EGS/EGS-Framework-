@@ -26,10 +26,10 @@ namespace EGS_Framework.Core.Debug
             switch(one.ToUpper().Trim()) {
             case "HELP" : DebugConsole.Output.Clear(); DebugConsole.Output.AddRange(HELP());  break;
             case "CL" : DebugConsole.Output.Clear(); break;
-            case "DOS" : DebugConsole.Output.Add(DOS(two)); break;
+            case "DOS" : DebugConsole.Output.AddRange(DOS(two)); break;
             case "GOTO" : DebugConsole.Output.Add(GOTO(two)); break;
             case "R" : DebugConsole.Output.Add(R()); break;
-            case "SAVE" : DebugConsole.Output.Add(SAVE()); break;
+            case "SAVE" : DebugConsole.Output.AddRange(SAVE()); break;
             case "SET" : DebugConsole.Output.Add(SET(two,three,four)); break;
             default: DebugConsole.Output.Add(ERR()); break;
             }
@@ -87,7 +87,7 @@ namespace EGS_Framework.Core.Debug
         }
 
         // Stats
-        public static string DOS(string Objname) 
+        public static string[] DOS(string Objname) 
         {
             // Get obj name
             string OBJ = Objname.Trim();
@@ -96,15 +96,20 @@ namespace EGS_Framework.Core.Debug
             // All obj
             if (OBJ == "") 
             {
-                sb.AppendLine("=== All objects ===");
+                var managedObjects = FlatRedBall.SpriteManager.ManagedPositionedObjects;
 
-                foreach (var o in FlatRedBall.SpriteManager.ManagedPositionedObjects)
+                string[] result = new string[managedObjects.Count + 1];
+
+                result[0] = "=== All objects ===";
+
+                for (int i = 0; i < managedObjects.Count; i++)
                 {
-                    sb.AppendLine($"[{o.GetType().Name}] Name='{o.Name}'");
+                    var o = managedObjects[i];
+                    result[i + 1] = $"[{o.GetType().Name}] Name='{o.Name}'";
                 }
-                return sb.ToString();
-            } 
-            else 
+
+                return result;
+            } else
             // Stats
             {
                 var obj = FlatRedBall.SpriteManager.ManagedPositionedObjects
@@ -113,7 +118,7 @@ namespace EGS_Framework.Core.Debug
                         string.Equals(o.Name.Trim(), OBJ, StringComparison.OrdinalIgnoreCase));
 
                 if (obj == null)
-                    return $"Object '{OBJ}' not found";
+                    return new string[] { $"Object '{OBJ}' not found" };
 
                 // Filter
                 var type = obj.GetType();
@@ -164,12 +169,12 @@ namespace EGS_Framework.Core.Debug
 
                 // Update
                 DebugUpdate.debugWindows.Add(View);
-                return "Command complete";
+                return new string[] { "Command complete" };
             }
         }
 
         // Save to json
-        public static string SAVE() 
+        public static string[] SAVE() 
         {
             // list
             var allData = new List<Dictionary<string, object>>();
@@ -253,10 +258,18 @@ namespace EGS_Framework.Core.Debug
             } 
             catch (Exception ex) 
             {
-                return $"Error saving: {ex.Message}";
+                return new string[] { $"Error saving: {ex.Message}" };
             }
+            
+            // Short path
+            string relativePath = Path.GetRelativePath(AppDomain.CurrentDomain.BaseDirectory, path);
 
-            return $"Saved {allData.Count} objects to {path}";
+            return new string[] 
+            { 
+                "=== SAVE SYSTEM ===",
+                $"Status: Successfully saved {allData.Count} objects.",
+                $"Path:{relativePath}"
+            };
         }
         
         // Convert float var

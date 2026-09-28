@@ -71,6 +71,18 @@
           "Member": "Texture",
           "Value": "fgdg",
           "Time": 0.0
+        },
+        {
+          "Type": "float",
+          "Member": "X",
+          "Value": -8.0,
+          "Time": 0.0
+        },
+        {
+          "Type": "float",
+          "Member": "Y",
+          "Value": -8.0,
+          "Time": 0.0
         }
       ],
       "SourceType": 2,

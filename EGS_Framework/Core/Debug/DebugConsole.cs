@@ -13,6 +13,13 @@ namespace EGS_Framework.Core.Debug
         private static int Memorycount = 0;
         private static string allLet = "";
         private static int _backDelay = 0;
+        private static int _page = 0;
+        private static int Page
+        {
+            get => _page;
+            set => _page = Math.Clamp(value, 0, Output.Count);
+        }
+
         private static int _backMaxDelay = 1000;
         
         private static int BackDelay
@@ -58,6 +65,10 @@ namespace EGS_Framework.Core.Debug
             InputString.Rect.X = Base_X;
             InputString.Rect.Y = BackgroundDown;
 
+            // Pages
+            int start = 15 * Page;
+            int end = Math.Min(start + 15, Output.Count);
+
             // Keyrbord input 
             string output_ = "";
             string freshTypedText = InputManager.Keyboard.GetStringTyped();
@@ -98,18 +109,29 @@ namespace EGS_Framework.Core.Debug
                 Memory.Add(allLet.Trim());
                 Memorycount = Memory.Count;
                 allLet = "";
+                // Drop
+                int maxPage = (Output.Count - 1) / 15;
+                if (Page < maxPage) { Page = maxPage; }
             }
 
-            // Drop
-            if (Output.Count > 15)
+            // Page scroll
+            var scrollWheelChange = InputManager.Mouse.ScrollWheelChange;
+            if(scrollWheelChange > 0)
             {
-                string lastSavedLine = Output[Output.Count - 1];
-                Output.Clear();
-                Output.Add(lastSavedLine);
+                //"up"
+                Page --;
             }
-            
+            else if(scrollWheelChange < 0)
+            {
+                //"down"
+                Page++; 
+            }
+         
             // Outing (Helper connect)
-            foreach (var out_ in Output) { output_ += $"{out_}\n"; }
+            for (int i = start; i < end; i++)
+            {
+                output_ += $"{Output[i]}\n";
+            }
 
             // Text
             DebugDrawManager.DrawDebugConsoleTextOnScreen(output_, (Base_X - ConsoleWidth / 2) + 10, (Base_Y + ConsoleHeight / 2) - 10, ConsoleWidth);
