@@ -53,8 +53,6 @@ namespace EGS_Framework
 
             GeneratedInitialize();
 
-            
-
             base.Initialize();
         }
 
@@ -74,6 +72,7 @@ namespace EGS_Framework
             base.Update(gameTime);
         }
 
+        /*
         private void ChangeFullscreen() {
             FlatRedBallServices.GraphicsOptions.IsFullScreen = !FlatRedBallServices.GraphicsOptions.IsFullScreen;
 
@@ -88,6 +87,7 @@ namespace EGS_Framework
                 FlatRedBallServices.GraphicsOptions.SetResolution(800, 600);
             }
         }
+        */
 
         protected override void Draw(GameTime gameTime)
         {

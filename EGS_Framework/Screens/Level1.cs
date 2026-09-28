@@ -34,6 +34,7 @@ namespace EGS_Framework.Screens
 
         private void CustomDestroy()
         {
+            // ОБЯЗАТЕЛЬНО НАХУЙ НЕ ПОСТАВИШ ИГРЕ ПИЗДА ПОЛНАЯ 
             DebugCleanup.Clear();  
         }
 

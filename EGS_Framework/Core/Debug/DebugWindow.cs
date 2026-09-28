@@ -14,13 +14,14 @@ namespace EGS_Framework.Core.Debug
         private static readonly System.Collections.Generic.List<DebugWindow> _allWindows 
         = new System.Collections.Generic.List<DebugWindow>();
 
+        // Prefab
         public DebugWindow(Func<string> textFunc) 
         {
             _background = new DebugRect(200, 300, 100, -100, new Microsoft.Xna.Framework.Color(84, 84, 84, 200));
             _text = new DebugWindowText(); 
             _textFunc = textFunc;
         }
-
+        // Update func
         public void UpdateAndDraw() 
         {
             if (_background == null) return;
@@ -75,6 +76,7 @@ namespace EGS_Framework.Core.Debug
             }
         }
 
+        // Mouse in void
         public bool IsMouseOver()
         {
             if (_background == null || _background.Rect == null) return false;
@@ -91,6 +93,7 @@ namespace EGS_Framework.Core.Debug
             return insideX && insideY;
         }
 
+        // Close one window (scm)
         public void Close()
         {
             if (_background != null) 
@@ -108,8 +111,8 @@ namespace EGS_Framework.Core.Debug
             _windowX = 0;
             _windowY = 0;
         }
-
-         public static void ClearAll()
+        // All window
+        public static void ClearAll()
         {
             var copy = new System.Collections.Generic.List<DebugWindow>(_allWindows);
             foreach (var w in copy)

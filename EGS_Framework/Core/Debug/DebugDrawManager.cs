@@ -52,6 +52,7 @@ namespace EGS_Framework.Core.Debug
             _currentLineIndex++;
         }
 
+        // Main text
         public static void DrawDebugConsoleTextOnScreen(string _text,float xoffset,float yoffset,float WText) {
             Text currentText;
 
@@ -223,13 +224,11 @@ namespace EGS_Framework.Core.Debug
 
     public class DebugWindowText
     {
-        private List<Text> _windowTexts = new List<Text>();
+        private readonly List<Text> _windowTexts = new List<Text>();
         
         private int _currentWindowLineIndex = 0;
         public float TextW = 0;
         public float TextH = 0;
-        private Text _measurerText; 
-
 
         // Draw text function inside Window
         public void DrawDebugTextInsideWindow(string _text, float xoffset, float yoffset)

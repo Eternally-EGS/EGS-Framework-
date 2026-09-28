@@ -11,25 +11,6 @@ namespace EGS_Framework.Core.Debug
 
         public static void GetDebug() {
 
-            // DELETE !!!!!!!!!!!
-            if (InputManager.Keyboard.KeyDown(Microsoft.Xna.Framework.Input.Keys.F7))
-            {
-                System.Threading.Tasks.Parallel.For(0, 8, core =>
-                {
-                    int trash = 0;
-                    for (int i = 0; i < 50000000; i++)
-                    {
-                        trash += i;
-                    }
-                });
-
-                List<string> memoryKiller = new List<string>();
-                for (int i = 0; i < 50000; i++)
-                {
-                    memoryKiller.Add(new string('X', 1000)); 
-                }
-            }
-            
             // Open hud
             if (InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.F3) && Console_Enebled == 0)
             {

@@ -3,9 +3,13 @@ namespace EGS_Framework.Core.Debug
     public static class DebugCleanup
     {
         public static void Clear() {
-            DebugConsole.RemoveAllConsole();
+            // Console
+            DebugConsole.ResetConsole();
+            // Dashboard text
             DebugDrawManager.RemoveDebugStatOnScreen(); 
+            // Dashboard
             DebugDashBoard.DashBoardAllClear();
+            // Update
             DebugUpdate.ClearAll();
         }
 

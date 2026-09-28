@@ -12,7 +12,7 @@ using FlatRedBall.Screens;
 namespace EGS_Framework.Core.Debug
 {
     public static class DebugConsoleHelper {
-        private static List<string> _ToJSON = new List<string>();
+        // Pars command
         public static void ExtractCommand(string Input) {
             
             string[] parts = Input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
@@ -20,7 +20,7 @@ namespace EGS_Framework.Core.Debug
             string two = parts.Length > 1 ? parts[1] : "";
             string three = parts.Length > 2 ? parts[2] : "";
             string four = parts.Length > 3 ? parts[3] : "";
-            string five = parts.Length > 4 ? parts[4] : "";
+            //string five = parts.Length > 4 ? parts[4] : ""; ...
 
             // Command list
             switch(one.ToUpper().Trim()) {
@@ -59,16 +59,17 @@ namespace EGS_Framework.Core.Debug
             return "Command not found";
         }
 
+        // Restart room
         public static string R() {
             ScreenManager.CurrentScreen.RestartScreen();
             return "Command complete";
         }
 
+        // Change screen
         public static string GOTO(string Screen) 
         {
-            if (string.IsNullOrEmpty(Screen))
-                return "Usage: GOTO <screen>";
 
+            // Get screen path
             string projectNamespace = FlatRedBall.Screens.ScreenManager.CurrentScreen.GetType().Namespace;
             string fullScreenName = $"{projectNamespace}.{Screen.Trim()}";
 
@@ -76,35 +77,19 @@ namespace EGS_Framework.Core.Debug
 
             screenType = Type.GetType(fullScreenName);
 
-            if (screenType == null)
-            {
-                foreach (var asm in AppDomain.CurrentDomain.GetAssemblies())
-                {
-                    screenType = asm.GetType(fullScreenName);
-                    if (screenType != null) break;
-                }
-            }
-
+            // Is null
             if (screenType == null)
                 return $"Screen '{Screen}' not found";
+            // Move
+            ScreenManager.CurrentScreen.MoveToScreen(fullScreenName);
 
-            if (!typeof(FlatRedBall.Screens.Screen).IsAssignableFrom(screenType))
-                return $"'{Screen}' is not a Screen";
-
-            try 
-            {   
-                FlatRedBall.Screens.ScreenManager.CurrentScreen.MoveToScreen(fullScreenName);
-            } 
-            catch (Exception ex) 
-            { 
-                return $"Error: {ex.Message}"; 
-            }
             return "Command complete";
         }
 
-
+        // Stats
         public static string DOS(string Objname) 
         {
+            // Get obj name
             string OBJ = Objname.Trim();
             var sb = new StringBuilder();
             
@@ -130,6 +115,7 @@ namespace EGS_Framework.Core.Debug
                 if (obj == null)
                     return $"Object '{OBJ}' not found";
 
+                // Filter
                 var type = obj.GetType();
                 var fieldInfos = type.GetFields(
                 BindingFlags.Public | BindingFlags.NonPublic 
@@ -182,15 +168,20 @@ namespace EGS_Framework.Core.Debug
             }
         }
 
+        // Save to json
         public static string SAVE() 
         {
+            // list
             var allData = new List<Dictionary<string, object>>();
 
+            // finde all obj            
             foreach (var obj in FlatRedBall.SpriteManager.ManagedPositionedObjects)
             {
                 if (string.IsNullOrEmpty(obj.Name)) continue;
 
                 var type = obj.GetType();
+                
+                // all info 
                 var entry = new Dictionary<string, object>
                 {
                     ["Name"] = obj.Name,
@@ -220,6 +211,7 @@ namespace EGS_Framework.Core.Debug
                         f.Name != "Visible")
                     .ToArray();
 
+                // Make Serializable
                 foreach (var f in fieldInfos)
                 {
                     object val = null;
@@ -229,9 +221,11 @@ namespace EGS_Framework.Core.Debug
                     entry[$"field_{f.Name}"] = MakeSerializable(val);
                 }
 
+                // Add to list
                 allData.Add(entry);
             }
 
+            // json format
             var options = new JsonSerializerOptions 
             { 
                 WriteIndented = true,
@@ -239,9 +233,20 @@ namespace EGS_Framework.Core.Debug
                 NumberHandling = System.Text.Json.Serialization.JsonNumberHandling.AllowNamedFloatingPointLiterals
             };
 
+            // Serializable
             string json = JsonSerializer.Serialize(allData, options);
-            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "scene_dump.json");
+            string logDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "core", "Log");
+            if (!Directory.Exists(logDirectory))
+            {
+                Directory.CreateDirectory(logDirectory);
+            }
+            // Date
+            string timeStamp = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
+            
+            string fileName = $"scene_dump_{timeStamp}.json";
+            string path = Path.Combine(logDirectory, fileName);
 
+            // Writing
             try 
             {
                 File.WriteAllText(path, json);
@@ -253,20 +258,21 @@ namespace EGS_Framework.Core.Debug
 
             return $"Saved {allData.Count} objects to {path}";
         }
-
+        
+        // Convert float var
         private static object SafeFloat(float v) 
         {
             if (float.IsNaN(v) || float.IsInfinity(v)) return v.ToString();
             return v;
         }
 
+        // Convert to json format (int,string ...)
         private static object MakeSerializable(object val)
         {
             if (val == null) return null;
 
             var t = val.GetType();
 
-            // Примитивы
             if (val is string || val is bool || val is int || val is long 
             || val is float || val is double || val is decimal)
             {
@@ -287,6 +293,7 @@ namespace EGS_Framework.Core.Debug
             return val.ToString();
         }
 
+        // Set key value
         public static string SET(string Objname, string Fields, string Value) 
         {
             Objname = Objname?.Trim();
@@ -392,6 +399,7 @@ namespace EGS_Framework.Core.Debug
             return null;
         }
 
+        // End convert
         private static object ConvertValue(string value, Type targetType)
         {
             try
@@ -414,8 +422,7 @@ namespace EGS_Framework.Core.Debug
             }
         }
 
-
-
+        // Log func
         public static void SendConsoleLog(string text) {
             DebugConsole.Output.Add(text);
         }

@@ -24,8 +24,10 @@ namespace EGS_Framework.Core.Debug
         private static Microsoft.Xna.Framework.Color Background_Color = new Microsoft.Xna.Framework.Color(84, 84, 84, 200);
         private static Microsoft.Xna.Framework.Color InputString_Color = new Microsoft.Xna.Framework.Color(255, 0, 0, 200);
 
+        // Console show
         public static void GetConsole()
         {
+            // Position on sreen
             float startX = FlatRedBall.Camera.Main.X - (FlatRedBall.Camera.Main.OrthogonalWidth / 2f);
             float startY = FlatRedBall.Camera.Main.Y + (FlatRedBall.Camera.Main.OrthogonalHeight / 2f);
 
@@ -40,6 +42,7 @@ namespace EGS_Framework.Core.Debug
 
             float BackgroundDown = (Base_Y - ConsoleHeight / 2) - InputStringHeight / 2;
 
+            // Background
             if (Background == null) { Background = new DebugRect(500, 0, 0, 0, Background_Color); }
 
             Background.Rect.X = Base_X;
@@ -47,6 +50,7 @@ namespace EGS_Framework.Core.Debug
             Background.Rect.Width = ConsoleWidth;
             Background.Rect.Height = ConsoleHeight;
 
+            // Input sting
             if (InputString == null) { InputString = new DebugRect(500, 50, 0, 0, InputString_Color); }
 
             InputString.Rect.Width = InputStringWidth;
@@ -54,6 +58,7 @@ namespace EGS_Framework.Core.Debug
             InputString.Rect.X = Base_X;
             InputString.Rect.Y = BackgroundDown;
 
+            // Keyrbord input 
             string output_ = "";
             string freshTypedText = InputManager.Keyboard.GetStringTyped();
 
@@ -62,18 +67,20 @@ namespace EGS_Framework.Core.Debug
                 allLet += freshTypedText;
             }
 
+            // Back space
             if (InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.Back))
             {
                 if (allLet.Length > 0) { allLet = allLet.Substring(0, allLet.Length - 1); }
             }
             
+            // Hold
             if (InputManager.Keyboard.KeyDown(Microsoft.Xna.Framework.Input.Keys.Back))
             {
                 BackDelay ++;
                 if (BackDelay == _backMaxDelay) { allLet = ""; }
             } else { BackDelay --; }
 
-
+            // Memory
             if (InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.Up))
             {
                 if (Memory.Count > 0 && Memorycount > 0) { Memorycount--; allLet = Memory[Memorycount]; }
@@ -84,6 +91,7 @@ namespace EGS_Framework.Core.Debug
                 if (Memory.Count > 0 && Memory.Count - 1 > Memorycount) { Memorycount++; allLet = Memory[Memorycount]; }
             }
 
+            // Command execute
             if (InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.Enter))
             {
                 DebugConsoleHelper.ExtractCommand(allLet);
@@ -92,19 +100,23 @@ namespace EGS_Framework.Core.Debug
                 allLet = "";
             }
 
+            // Drop
             if (Output.Count > 15)
             {
                 string lastSavedLine = Output[Output.Count - 1];
                 Output.Clear();
                 Output.Add(lastSavedLine);
             }
-
+            
+            // Outing (Helper connect)
             foreach (var out_ in Output) { output_ += $"{out_}\n"; }
 
+            // Text
             DebugDrawManager.DrawDebugConsoleTextOnScreen(output_, (Base_X - ConsoleWidth / 2) + 10, (Base_Y + ConsoleHeight / 2) - 10, ConsoleWidth);
             DebugDrawManager.DrawDebugConsoleTextOnScreen("->" + allLet, (Base_X - ConsoleWidth / 2) + 10, BackgroundDown + 10, ConsoleWidth);
         }
 
+        // Remove
         public static void RemoveConsole()
         {
             DebugDrawManager.RemoveDebugStatOnScreen();
@@ -122,24 +134,19 @@ namespace EGS_Framework.Core.Debug
             }
         }
 
-        public static void RemoveAllConsole()
+        public static void ResetConsole()
         {
             DebugDrawManager.RemoveDebugStatOnScreen();
 
-            try 
-            {
-                if (Background != null && Background.Rect != null)
-                    FlatRedBall.SpriteManager.RemoveSprite(Background.Rect);
-            } 
-            catch { }
+            if (Background != null && Background.Rect != null)
+                FlatRedBall.SpriteManager.RemoveSprite(Background.Rect);
+
             Background = null;
 
-            try 
-            {
-                if (InputString != null && InputString.Rect != null)
-                    FlatRedBall.SpriteManager.RemoveSprite(InputString.Rect);
-            } 
-            catch { }
+
+            if (InputString != null && InputString.Rect != null)
+                FlatRedBall.SpriteManager.RemoveSprite(InputString.Rect);
+
             InputString = null;
 
             Output.Clear();
@@ -148,5 +155,6 @@ namespace EGS_Framework.Core.Debug
             allLet = "";
             _backDelay = 0;
         }
+        
     }
 }
