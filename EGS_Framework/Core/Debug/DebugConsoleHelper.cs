@@ -1,15 +1,18 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Text.Json;
 using FlatRedBall;
 using FlatRedBall.Screens;
 
 namespace EGS_Framework.Core.Debug
 {
     public static class DebugConsoleHelper {
+        private static List<string> _ToJSON = new List<string>();
         public static void ExtractCommand(string Input) {
             
             string[] parts = Input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
@@ -26,6 +29,7 @@ namespace EGS_Framework.Core.Debug
             case "DOS" : DebugConsole.Output.Add(DOS(two)); break;
             case "GOTO" : DebugConsole.Output.Add(GOTO(two)); break;
             case "R" : DebugConsole.Output.Add(R()); break;
+            case "SAVE" : DebugConsole.Output.Add(SAVE()); break;
             case "SET" : DebugConsole.Output.Add(SET(two,three,four)); break;
             default: DebugConsole.Output.Add(ERR()); break;
             }
@@ -38,14 +42,14 @@ namespace EGS_Framework.Core.Debug
                 "Available commands:",
                 "DOS <name>     - Inspect object",
                 "SET <field>    - Change value",
-                "CO <name>      - Create object",
-                "CALL <method>  - Call method",
-                "DAD            - Drag & Drop mode",
+                "//CO <name>      - Create object",
+                "//CALL <method>  - Call method",
+                "//DAD            - Drag & Drop mode",
                 "SAVE           - Save state to JSON",
                 "R              - Full game restart",
-                "R -0           - Restart current screen",
+                "//R -0           - Restart current screen",
                 "GOTO <screen>  - Switch screen",
-                "KILL <name>    - Delete object",
+                "//KILL <name>    - Delete object",
                 "CL             - Clear console"
             };
         }
@@ -54,6 +58,7 @@ namespace EGS_Framework.Core.Debug
         public static string ERR() {
             return "Command not found";
         }
+
         public static string R() {
             ScreenManager.CurrentScreen.RestartScreen();
             return "Command complete";
@@ -175,6 +180,111 @@ namespace EGS_Framework.Core.Debug
                 DebugUpdate.debugWindows.Add(View);
                 return "Command complete";
             }
+        }
+
+        public static string SAVE() 
+        {
+            var allData = new List<Dictionary<string, object>>();
+
+            foreach (var obj in FlatRedBall.SpriteManager.ManagedPositionedObjects)
+            {
+                if (string.IsNullOrEmpty(obj.Name)) continue;
+
+                var type = obj.GetType();
+                var entry = new Dictionary<string, object>
+                {
+                    ["Name"] = obj.Name,
+                    ["Type"] = type.Name,
+                    ["X"] = SafeFloat(obj.X),
+                    ["Y"] = SafeFloat(obj.Y),
+                    ["Z"] = SafeFloat(obj.Z),
+                    ["RotationZ"] = SafeFloat(obj.RotationZ),
+                    ["RotationX"] = SafeFloat(obj.RotationX),
+                    ["RotationY"] = SafeFloat(obj.RotationY),
+                    ["VelocityX"] = SafeFloat(obj.Velocity.X),
+                    ["VelocityY"] = SafeFloat(obj.Velocity.Y),
+                    ["VelocityZ"] = SafeFloat(obj.Velocity.Z),
+                    ["AccelerationX"] = SafeFloat(obj.Acceleration.X),
+                    ["AccelerationY"] = SafeFloat(obj.Acceleration.Y),
+                    ["AccelerationZ"] = SafeFloat(obj.Acceleration.Z),
+                };
+
+                var fieldInfos = type.GetFields(
+                        BindingFlags.Public | BindingFlags.NonPublic 
+                        | BindingFlags.Instance | BindingFlags.DeclaredOnly)
+                    .Where(f => 
+                        !f.Name.StartsWith("m") &&
+                        f.Name != "Texture" &&
+                        f.Name != "SpriteInstance" &&
+                        f.Name != "LayerProvidedByContainer" &&
+                        f.Name != "Visible")
+                    .ToArray();
+
+                foreach (var f in fieldInfos)
+                {
+                    object val = null;
+                    try { val = f.GetValue(obj); } 
+                    catch { val = "<err>"; }
+
+                    entry[$"field_{f.Name}"] = MakeSerializable(val);
+                }
+
+                allData.Add(entry);
+            }
+
+            var options = new JsonSerializerOptions 
+            { 
+                WriteIndented = true,
+                Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+                NumberHandling = System.Text.Json.Serialization.JsonNumberHandling.AllowNamedFloatingPointLiterals
+            };
+
+            string json = JsonSerializer.Serialize(allData, options);
+            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "scene_dump.json");
+
+            try 
+            {
+                File.WriteAllText(path, json);
+            } 
+            catch (Exception ex) 
+            {
+                return $"Error saving: {ex.Message}";
+            }
+
+            return $"Saved {allData.Count} objects to {path}";
+        }
+
+        private static object SafeFloat(float v) 
+        {
+            if (float.IsNaN(v) || float.IsInfinity(v)) return v.ToString();
+            return v;
+        }
+
+        private static object MakeSerializable(object val)
+        {
+            if (val == null) return null;
+
+            var t = val.GetType();
+
+            // Примитивы
+            if (val is string || val is bool || val is int || val is long 
+            || val is float || val is double || val is decimal)
+            {
+                if (val is float f && (float.IsNaN(f) || float.IsInfinity(f))) return f.ToString();
+                if (val is double d && (double.IsNaN(d) || double.IsInfinity(d))) return d.ToString();
+                return val;
+            }
+
+            if (t.IsEnum) return val.ToString();
+
+            if (val is System.Collections.IEnumerable e && !(val is string))
+            {
+                int count = 0;
+                foreach (var _ in e) count++;
+                return $"[collection of {count}]";
+            }
+
+            return val.ToString();
         }
 
         public static string SET(string Objname, string Fields, string Value) 
