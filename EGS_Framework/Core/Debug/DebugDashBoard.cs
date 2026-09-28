@@ -8,11 +8,9 @@ namespace EGS_Framework.Core.Debug
 {
     public static class DebugDashBoard
     {
-        private static DebugGraph _frametimeGraph = new DebugGraph(new Color(255,0,0,100));
-        private static DebugGraph _memoryGraph = new DebugGraph(new Color(0,255,0,100));
-        private static DebugWindow _Fps = new DebugWindow(() => $"FPS: {((FlatRedBall.TimeManager.SecondDifference > 0) ? 1f / FlatRedBall.TimeManager.SecondDifference : 0):F0}");
-
-        private static DebugGraph _fpsGraph = new DebugGraph(new Color(0,0,255,100));
+        private static DebugGraph _frametimeGraph = new DebugGraph(new Color(255,0,0,200));
+        private static DebugGraph _memoryGraph = new DebugGraph(new Color(0,255,0,200));
+        private static DebugGraph _fpsGraph = new DebugGraph(new Color(0,0,255,200));
         // Show game info
         public static void GetDashBoardInfo()
         {
@@ -41,10 +39,7 @@ namespace EGS_Framework.Core.Debug
             DebugDrawManager.DrawDebugTextOnScreen($"FrameTime                         Memory                             Fps",pading,-20);
             _frametimeGraph.Draw(frameTime,86,-220,200f);
             _memoryGraph.Draw(memory,250,-220,102400f);
-            _fpsGraph.Draw(fps,414,-220,250f);
-
-            DebugUpdate.debugWindows.Add(_Fps);
-            
+            _fpsGraph.Draw(fps,414,-220,250f);     
         }
 
         public static void DashBoardClear() {

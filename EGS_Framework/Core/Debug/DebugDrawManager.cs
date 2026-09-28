@@ -42,6 +42,7 @@ namespace EGS_Framework.Core.Debug
 
             currentText.Visible = true;
             currentText.DisplayText = _text;
+            currentText.SetColor(new Microsoft.Xna.Framework.Color(84, 84, 84, 200));
 
             float lineSpacing = _currentLineIndex * 20f;
 
