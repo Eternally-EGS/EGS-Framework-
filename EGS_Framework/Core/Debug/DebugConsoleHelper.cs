@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using FlatRedBall;
 using FlatRedBall.Screens;
 
 namespace EGS_Framework.Core.Debug
@@ -24,6 +25,7 @@ namespace EGS_Framework.Core.Debug
             case "CL" : DebugConsole.Output.Clear(); break;
             case "DOS" : DebugConsole.Output.Add(DOS(two)); break;
             case "GOTO" : DebugConsole.Output.Add(GOTO(two)); break;
+            case "R" : DebugConsole.Output.Add(R()); break;
             case "SET" : DebugConsole.Output.Add(SET(two,three,four)); break;
             default: DebugConsole.Output.Add(ERR()); break;
             }
@@ -51,6 +53,10 @@ namespace EGS_Framework.Core.Debug
         // Placeholder 
         public static string ERR() {
             return "Command not found";
+        }
+        public static string R() {
+            ScreenManager.CurrentScreen.RestartScreen();
+            return "Command complete";
         }
 
         public static string GOTO(string Screen) 
@@ -88,7 +94,6 @@ namespace EGS_Framework.Core.Debug
             { 
                 return $"Error: {ex.Message}"; 
             }
-
             return "Command complete";
         }
 
