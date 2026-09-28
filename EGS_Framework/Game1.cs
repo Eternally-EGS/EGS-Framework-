@@ -1,5 +1,7 @@
 using EGS_Framework.Core.Debug;
 using FlatRedBall;
+using FlatRedBall.Graphics;
+using FlatRedBall.Input;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -63,9 +65,28 @@ namespace EGS_Framework
             FlatRedBall.Screens.ScreenManager.Activity();
 
             GeneratedUpdate(gameTime);
-            DebugManager.GetDebug();
+            
+            // Custom Debug 
+            DebugUpdate.Update();
+            // KILLLL
+            if (InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.F5)) { ChangeFullscreen(); }
 
             base.Update(gameTime);
+        }
+
+        private void ChangeFullscreen() {
+            FlatRedBallServices.GraphicsOptions.IsFullScreen = !FlatRedBallServices.GraphicsOptions.IsFullScreen;
+
+            if (FlatRedBallServices.GraphicsOptions.IsFullScreen) 
+            {
+                var displayMode = FlatRedBallServices.GraphicsDevice.DisplayMode;
+                FlatRedBallServices.GraphicsOptions.SetFullScreen(displayMode.Width, displayMode.Height);
+            } 
+            else 
+            { 
+                FlatRedBallServices.GraphicsOptions.IsFullScreen = false;
+                FlatRedBallServices.GraphicsOptions.SetResolution(800, 600);
+            }
         }
 
         protected override void Draw(GameTime gameTime)

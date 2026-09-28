@@ -10,6 +10,8 @@ namespace EGS_Framework.Core.Debug
     {
         private static DebugGraph _frametimeGraph = new DebugGraph(new Color(255,0,0,100));
         private static DebugGraph _memoryGraph = new DebugGraph(new Color(0,255,0,100));
+        private static DebugWindow _Fps = new DebugWindow(() => $"FPS: {((FlatRedBall.TimeManager.SecondDifference > 0) ? 1f / FlatRedBall.TimeManager.SecondDifference : 0):F0}");
+
         private static DebugGraph _fpsGraph = new DebugGraph(new Color(0,0,255,100));
         // Show game info
         public static void GetDashBoardInfo()
@@ -41,8 +43,7 @@ namespace EGS_Framework.Core.Debug
             _memoryGraph.Draw(memory,250,-220,102400f);
             _fpsGraph.Draw(fps,414,-220,250f);
 
-            DebugWindow.GetWindow($"FPS: {fps:F0} TotalMemory: {memory:F0} kb");
-
+            DebugUpdate.debugWindows.Add(_Fps);
             
         }
 
@@ -50,9 +51,6 @@ namespace EGS_Framework.Core.Debug
             _frametimeGraph.Clear();
             _memoryGraph.Clear();
             _fpsGraph.Clear();
-            DebugWindow.CloseWindow();
         }
-
-
     }
 }
