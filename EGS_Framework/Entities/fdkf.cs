@@ -10,14 +10,21 @@ using FlatRedBall.Graphics.Particle;
 using FlatRedBall.Math.Geometry;
 using Microsoft.Xna.Framework;
 using EGS_Framework.Core.JSON;
+using EGS_Framework.Core.SaveSystem;
 
 namespace EGS_Framework.Entities
 {
     // TEST ?????????????????????
     public partial class fdkf
     {
-        private int step = ConfigManager.Game.Base_conf.Speed;
-        private int step2 = 2;
+        //public static int step = ConfigManager.Game.Base_conf.Speed;
+        public static int step
+        {
+            get => SaveManager.GetSlot<int>("step", 2);
+            set => SaveManager.SetSlot("step", value);
+        }
+        public static int step2 => SaveManager.GetSlot<int>("step2", 2);
+
         /// <summary>
         /// Initialization logic which is executed only one time for this Entity (unless the Entity is pooled).
         /// This method is called when the Entity is added to managers. Entities which are instantiated but not

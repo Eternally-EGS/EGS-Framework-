@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Text.Json;
 using EGS_Framework.Core.JSON;
+using EGS_Framework.Core.SaveSystem;
 using FlatRedBall;
 using FlatRedBall.Screens;
 
@@ -33,6 +34,7 @@ namespace EGS_Framework.Core.Debug
             case "RJS" : DebugConsole.Output.Add(RJS()); break;
             case "SAVE" : DebugConsole.Output.AddRange(SAVE()); break;
             case "SET" : DebugConsole.Output.Add(SET(two,three,four)); break;
+            case "ANY" : DebugConsole.Output.Add(ANY()); break;
             default: DebugConsole.Output.Add(ERR()); break;
             }
             
@@ -70,6 +72,12 @@ namespace EGS_Framework.Core.Debug
             return "Command complete";
         }
 
+        public static string ANY() {
+            SaveManager.SwitchSlot(10);
+            SaveManager.SaveAll();
+            return "Command maybe complete";  
+        }
+
         // Change screen
         public static string GOTO(string Screen) 
         {
@@ -92,19 +100,17 @@ namespace EGS_Framework.Core.Debug
         }
 
         // Stats
-        public static string[] DOS(string Objname) 
+        public static string[] DOS(string Objname)
         {
             // Get obj name
             string OBJ = Objname.Trim();
-            var sb = new StringBuilder();
-            
+
             // All obj
-            if (OBJ == "") 
+            if (OBJ == "")
             {
                 var managedObjects = FlatRedBall.SpriteManager.ManagedPositionedObjects;
 
                 string[] result = new string[managedObjects.Count + 1];
-
                 result[0] = "=== All objects ===";
 
                 for (int i = 0; i < managedObjects.Count; i++)
@@ -114,23 +120,25 @@ namespace EGS_Framework.Core.Debug
                 }
 
                 return result;
-            } else
+            }
+
             // Stats
-            {
-                var obj = FlatRedBall.SpriteManager.ManagedPositionedObjects
-                    .FirstOrDefault(o => 
-                        !string.IsNullOrEmpty(o.Name) &&
-                        string.Equals(o.Name.Trim(), OBJ, StringComparison.OrdinalIgnoreCase));
+            var obj = FlatRedBall.SpriteManager.ManagedPositionedObjects
+                .FirstOrDefault(o =>
+                    !string.IsNullOrEmpty(o.Name) &&
+                    string.Equals(o.Name.Trim(), OBJ, StringComparison.OrdinalIgnoreCase));
 
-                if (obj == null)
-                    return new string[] { $"Object '{OBJ}' not found" };
+            if (obj == null)
+                return new string[] { $"Object '{OBJ}' not found" };
 
-                // Filter
-                var type = obj.GetType();
-                var fieldInfos = type.GetFields(
-                BindingFlags.Public | BindingFlags.NonPublic 
-                | BindingFlags.Instance | BindingFlags.DeclaredOnly)
-                .Where(f => 
+            // Filter
+            var type = obj.GetType();
+
+            var fieldInfos = type.GetFields(
+                    BindingFlags.Public | BindingFlags.NonPublic
+                    | BindingFlags.Instance | BindingFlags.Static
+                    | BindingFlags.DeclaredOnly)
+                .Where(f =>
                     !f.Name.StartsWith("m") &&
                     f.Name != "Texture" &&
                     f.Name != "SpriteInstance" &&
@@ -138,44 +146,87 @@ namespace EGS_Framework.Core.Debug
                     f.Name != "Visible")
                 .ToArray();
 
-                // Wiew
-                DebugWindow View = new DebugWindow(() =>
+            var propInfos = type.GetProperties(
+                    BindingFlags.Public | BindingFlags.NonPublic
+                    | BindingFlags.Instance | BindingFlags.Static
+                    | BindingFlags.DeclaredOnly)
+                .Where(p =>
+                    p.CanRead &&
+                    p.GetIndexParameters().Length == 0 &&
+                    !p.Name.StartsWith("m"))
+                .ToArray();
+
+            // View
+            DebugWindow View = new DebugWindow(() =>
+            {
+                var sb = new StringBuilder();
+                sb.AppendLine($"=== {obj.Name} ({type.Name}) ===");
+
+                // base
+                sb.AppendLine($"X: {obj.X:F2}  Y: {obj.Y:F2}  Z: {obj.Z:F2}");
+                sb.AppendLine($"RotZ: {obj.RotationZ:F2}  RotX: {obj.RotationX:F2}  RotY: {obj.RotationY:F2}");
+                sb.AppendLine($"Vel: ({obj.Velocity.X:F1},{obj.Velocity.Y:F1},{obj.Velocity.Z:F1})");
+                sb.AppendLine($"Acc: ({obj.Acceleration.X:F1},{obj.Acceleration.Y:F1},{obj.Acceleration.Z:F1})");
+
+                // FIELDS
+                sb.AppendLine("--- FIELDS ---");
+                if (fieldInfos.Length == 0)
                 {
-                    var sb = new StringBuilder();
-                    sb.AppendLine($"=== {obj.Name} ({type.Name}) ===");
-
-                    // base
-                    sb.AppendLine($"X: {obj.X:F2}  Y: {obj.Y:F2}  Z: {obj.Z:F2}");
-                    sb.AppendLine($"RotZ: {obj.RotationZ:F2}  RotX: {obj.RotationX:F2}  RotY: {obj.RotationY:F2}");
-                    sb.AppendLine($"Vel: ({obj.Velocity.X:F1},{obj.Velocity.Y:F1},{obj.Velocity.Z:F1})");
-                    sb.AppendLine($"Acc: ({obj.Acceleration.X:F1},{obj.Acceleration.Y:F1},{obj.Acceleration.Z:F1})");
-
-                    // variable
-                    sb.AppendLine("--- FIELDS ---");
-                    if (fieldInfos.Length == 0)
+                    sb.AppendLine("(no own fields)");
+                }
+                else
+                {
+                    foreach (var f in fieldInfos)
                     {
-                        sb.AppendLine("(no own fields)");
-                    }
-                    else
-                    {
-                        foreach (var f in fieldInfos)
+                        object val = null;
+                        try
                         {
-                            object val = null;
-                            try { val = f.GetValue(obj); } 
-                            catch { val = "<err>"; }
-
-                            string tag = f.IsPublic ? "+" : "-";
-                            sb.AppendLine($"{tag} {f.Name} = {val}");
+                            val = f.IsStatic ? f.GetValue(null) : f.GetValue(obj);
                         }
+                        catch
+                        {
+                            val = "<err>";
+                        }
+
+                        string tag = f.IsPublic ? "+" : "-";
+                        string staticTag = f.IsStatic ? "static " : "";
+                        sb.AppendLine($"{tag} {staticTag}{f.Name} = {val}");
                     }
+                }
 
-                    return sb.ToString();
-                });
+                // PROPERTIES
+                sb.AppendLine("--- PROPERTIES ---");
+                if (propInfos.Length == 0)
+                {
+                    sb.AppendLine("(no own properties)");
+                }
+                else
+                {
+                    foreach (var p in propInfos)
+                    {
+                        object val = null;
+                        try
+                        {
+                            bool isStatic = p.GetMethod?.IsStatic == true;
+                            val = p.GetValue(isStatic ? null : obj);
+                        }
+                        catch
+                        {
+                            val = "<err>";
+                        }
 
-                // Update
-                DebugUpdate.debugWindows.Add(View);
-                return new string[] { "Command complete" };
-            }
+                        string tag = p.GetMethod?.IsPublic == true ? "+" : "-";
+                        string staticTag = p.GetMethod?.IsStatic == true ? "static " : "";
+                        sb.AppendLine($"{tag} {staticTag}{p.Name} = {val}");
+                    }
+                }
+
+                return sb.ToString();
+            });
+
+            // Update
+            DebugUpdate.debugWindows.Add(View);
+            return new string[] { "Command complete" };
         }
 
         // Save to json
@@ -372,11 +423,12 @@ namespace EGS_Framework.Core.Debug
                     return $"Acceleration = ({a.Value.X},{a.Value.Y},{a.Value.Z})";
             }
 
-            // Custom
+            // ★ Поиск поля
             var field = type.GetFields(
-                    BindingFlags.Public | BindingFlags.NonPublic 
-                    | BindingFlags.Instance | BindingFlags.DeclaredOnly)
-                .FirstOrDefault(f => 
+                    BindingFlags.Public | BindingFlags.NonPublic
+                    | BindingFlags.Instance | BindingFlags.Static
+                    | BindingFlags.DeclaredOnly)
+                .FirstOrDefault(f =>
                     !f.Name.StartsWith("m") &&
                     f.Name != "Texture" &&
                     f.Name != "SpriteInstance" &&
@@ -384,8 +436,40 @@ namespace EGS_Framework.Core.Debug
                     f.Name != "Visible" &&
                     string.Equals(f.Name, Fields, StringComparison.OrdinalIgnoreCase));
 
+            // ★ Если поля нет — ищем свойство
             if (field == null)
-                return $"Field '{Fields}' not found on {type.Name}";
+            {
+                var prop = type.GetProperties(
+                        BindingFlags.Public | BindingFlags.NonPublic
+                        | BindingFlags.Instance | BindingFlags.Static
+                        | BindingFlags.DeclaredOnly)
+                    .FirstOrDefault(p =>
+                        p.CanWrite &&
+                        p.GetIndexParameters().Length == 0 &&
+                        !p.Name.StartsWith("m") &&
+                        string.Equals(p.Name, Fields, StringComparison.OrdinalIgnoreCase));
+
+                if (prop == null)
+                    return $"Field or property '{Fields}' not found on {type.Name}";
+
+                try
+                {
+                    object converted = ConvertValue(Value, prop.PropertyType);
+                    if (converted == null)
+                        return $"Cannot convert '{Value}' to {prop.PropertyType.Name}";
+
+                    if (prop.SetMethod?.IsStatic == true)
+                        prop.SetValue(null, converted);
+                    else
+                        prop.SetValue(obj, converted);
+
+                    return $"{prop.Name} = {converted}";
+                }
+                catch (Exception ex)
+                {
+                    return $"Error: {ex.Message}";
+                }
+            }
 
             try
             {
@@ -393,7 +477,11 @@ namespace EGS_Framework.Core.Debug
                 if (converted == null)
                     return $"Cannot convert '{Value}' to {field.FieldType.Name}";
 
-                field.SetValue(obj, converted);
+                if (field.IsStatic)
+                    field.SetValue(null, converted);
+                else
+                    field.SetValue(obj, converted);
+
                 return $"{field.Name} = {converted}";
             }
             catch (Exception ex)

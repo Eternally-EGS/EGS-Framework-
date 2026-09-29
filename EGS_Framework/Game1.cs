@@ -1,5 +1,6 @@
 using EGS_Framework.Core.Debug;
 using EGS_Framework.Core.JSON;
+using EGS_Framework.Core.SaveSystem;
 using FlatRedBall;
 using FlatRedBall.Graphics;
 using FlatRedBall.Input;
@@ -50,7 +51,9 @@ namespace EGS_Framework
 
             // Config init
             ConfigManager.LoadAll();
-        
+            // Load
+            SaveManager.LoadAll(); 
+       
             GeneratedInitializeEarly();
 
             FlatRedBallServices.InitializeFlatRedBall(this, graphics);
