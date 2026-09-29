@@ -1,4 +1,5 @@
 using EGS_Framework.Core.Debug;
+using EGS_Framework.Core.JSON;
 using FlatRedBall;
 using FlatRedBall.Graphics;
 using FlatRedBall.Input;
@@ -46,6 +47,9 @@ namespace EGS_Framework
             IsFixedTimeStep = false; 
             graphics.SynchronizeWithVerticalRetrace = false;
             graphics.ApplyChanges();
+
+            // Config init
+            ConfigManager.LoadAll();
         
             GeneratedInitializeEarly();
 

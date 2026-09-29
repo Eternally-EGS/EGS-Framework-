@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Text.Json;
+using EGS_Framework.Core.JSON;
 using FlatRedBall;
 using FlatRedBall.Screens;
 
@@ -29,6 +30,7 @@ namespace EGS_Framework.Core.Debug
             case "DOS" : DebugConsole.Output.AddRange(DOS(two)); break;
             case "GOTO" : DebugConsole.Output.Add(GOTO(two)); break;
             case "R" : DebugConsole.Output.Add(R()); break;
+            case "RJS" : DebugConsole.Output.Add(RJS()); break;
             case "SAVE" : DebugConsole.Output.AddRange(SAVE()); break;
             case "SET" : DebugConsole.Output.Add(SET(two,three,four)); break;
             default: DebugConsole.Output.Add(ERR()); break;
@@ -38,18 +40,14 @@ namespace EGS_Framework.Core.Debug
 
         // Show all command 
         public static string[] HELP() {
-            return new string[] {
+             return new string[] {
                 "Available commands:",
                 "DOS <name>     - Inspect object",
                 "SET <field>    - Change value",
-                "//CO <name>      - Create object",
-                "//CALL <method>  - Call method",
-                "//DAD            - Drag & Drop mode",
                 "SAVE           - Save state to JSON",
                 "R              - Full game restart",
-                "//R -0           - Restart current screen",
                 "GOTO <screen>  - Switch screen",
-                "//KILL <name>    - Delete object",
+                "RJS            - Reload configs + restart screen",
                 "CL             - Clear console"
             };
         }
@@ -62,6 +60,13 @@ namespace EGS_Framework.Core.Debug
         // Restart room
         public static string R() {
             ScreenManager.CurrentScreen.RestartScreen();
+            return "Command complete";
+        }
+
+        // Reset JSON
+        public static string RJS() {
+            ScreenManager.CurrentScreen.RestartScreen();
+            ConfigManager.LoadAll();
             return "Command complete";
         }
 

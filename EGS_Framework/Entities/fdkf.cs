@@ -9,13 +9,14 @@ using FlatRedBall.Graphics.Animation;
 using FlatRedBall.Graphics.Particle;
 using FlatRedBall.Math.Geometry;
 using Microsoft.Xna.Framework;
+using EGS_Framework.Core.JSON;
 
 namespace EGS_Framework.Entities
 {
     // TEST ?????????????????????
     public partial class fdkf
     {
-        private int step = 2;
+        private int step = ConfigManager.Game.Base_conf.Speed;
         private int step2 = 2;
         /// <summary>
         /// Initialization logic which is executed only one time for this Entity (unless the Entity is pooled).
