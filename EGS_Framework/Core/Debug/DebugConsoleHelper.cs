@@ -72,6 +72,7 @@ namespace EGS_Framework.Core.Debug
             return "Command complete";
         }
 
+        // Any func pls delete tomorow
         public static string ANY() {
             SaveManager.SwitchSlot(10);
             SaveManager.SaveAll();

@@ -50,7 +50,6 @@ namespace EGS_Framework.Core.JSON
                 string updatedJson = File.ReadAllText(path);
                 loaded = LoadGeneric(prop.PropertyType, updatedJson, out _);
 
-                // Обновляем существующий объект, а не заменяем ссылку
                 object existing = prop.GetValue(Game);
                 if (existing == null)
                 {
