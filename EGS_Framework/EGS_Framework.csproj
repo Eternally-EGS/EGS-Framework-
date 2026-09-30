@@ -15,10 +15,29 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Core\**\*.cs" />
+    <Compile Include="Forms\Components\ButtonForms.Generated.cs" />
+    <Compile Include="Forms\Components\ListForms.Generated.cs" />
+    <Compile Include="Forms\Components\PopapForms.Generated.cs" />
     <Compile Include="Forms\Screens\Main_MenuGumForms.Generated.cs" />
+    <Compile Include="GumRuntimes\ButtonRuntime.cs" />
+    <Compile Include="GumRuntimes\ButtonRuntime.Generated.cs">
+      <DependentUpon>ButtonRuntime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GumRuntimes\ListRuntime.cs" />
+    <Compile Include="GumRuntimes\ListRuntime.Generated.cs">
+      <DependentUpon>ListRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\Main_MenuGumRuntime.cs" />
     <Compile Include="GumRuntimes\Main_MenuGumRuntime.Generated.cs">
       <DependentUpon>Main_MenuGumRuntime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GumRuntimes\PopapRuntime.cs" />
+    <Compile Include="GumRuntimes\PopapRuntime.Generated.cs">
+      <DependentUpon>PopapRuntime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Main_Menu.cs" />
+    <Compile Include="Screens\Main_Menu.Generated.cs">
+      <DependentUpon>Main_Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\**\*.cs" />
     <Compile Include="Forms\Screens\Level1CopyGumForms.Generated.cs" />
@@ -30,6 +49,10 @@
     <None Include="Content\Entities\fdkf\fgdg.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>fgdg</Name>
+    </None>
+    <None Include="Content\GumProject\Components\Button.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Button</Name>
     </None>
     <None Include="Content\GumProject\Components\Controls\ButtonClose.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -199,6 +222,14 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>VerticalLines</Name>
     </None>
+    <None Include="Content\GumProject\Components\List.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>List</Name>
+    </None>
+    <None Include="Content\GumProject\Components\Popap.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Popap</Name>
+    </None>
     <None Include="Content\GumProject\Components\Styles.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Styles</Name>
@@ -294,6 +325,10 @@
     <None Include="Content\GumProject\Screens\Level1Gum.gusx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Level1Gum</Name>
+    </None>
+    <None Include="Content\GumProject\Screens\Main_MenuGum.gusx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Main_MenuGum</Name>
     </None>
     <None Include="Content\GumProject\Standards\Circle.gutx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

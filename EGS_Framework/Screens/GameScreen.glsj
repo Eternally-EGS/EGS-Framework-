@@ -46,7 +46,25 @@
       "SourceClassGenericType": "Entities\\fdkf",
       "ExposedInDerived": true,
       "AttachToContainer": true,
-      "GenerateTimedEmit": true
+      "GenerateTimedEmit": true,
+      "ContainedObjects": [
+        {
+          "InstanceName": "fdkfInstance",
+          "SourceClassType": "Entities\\fdkf",
+          "Properties": [
+            {
+              "Name": "AssociateWithFactory",
+              "Value": true,
+              "Type": "bool"
+            }
+          ],
+          "InstructionSaves": [],
+          "SourceType": 1,
+          "SourceFile": "Entities\\fdkf",
+          "AttachToContainer": true,
+          "GenerateTimedEmit": true
+        }
+      ]
     },
     {
       "InstanceName": "CameraControllingEntityInstance",

@@ -1,4 +1,5 @@
 using EGS_Framework.Entities;
+using EGS_Framework.Services.UI;
 
 namespace EGS_Framework.Core.SaveSystem
 {
@@ -9,7 +10,7 @@ namespace EGS_Framework.Core.SaveSystem
         {
             // System
             SaveManager.SetMain("CurrentSlot", SaveManager.CurrentSlot);
-            //SaveManager.SetMain("CurrentResolution", );
+            SaveManager.SetMain("CurrentResolution", SettingManager.CurrentResolution);
             //SaveManager.SetMain("CurrentLanguage", );
             //SaveManager.SetMain("FullScreenEnable", );
             //SaveManager.SetMain("MusicVolume", SaveManager.CurrentSlot);

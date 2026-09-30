@@ -203,6 +203,293 @@
         "ElementType": "Screens",
         "EventType": 1,
         "TimestampUtc": "2026-09-30T17:41:16.5003081Z"
+      },
+      {
+        "NewName": "Button",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2026-09-30T17:55:44.6133753Z"
+      },
+      {
+        "NewName": "Main_MenuGum.ButtonInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-09-30T17:56:16.652513Z"
+      },
+      {
+        "NewName": "Main_MenuGum.Start_Button",
+        "OldName": "Main_MenuGum.ButtonInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T17:56:58.4647249Z"
+      },
+      {
+        "NewName": "Main_MenuGum.Start_ButtonI",
+        "OldName": "Main_MenuGum.Start_Button",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T17:57:37.755793Z"
+      },
+      {
+        "NewName": "Main_MenuGum.Start_ButtonI1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-09-30T17:57:40.144324Z"
+      },
+      {
+        "NewName": "Main_MenuGum.Start_ButtonI2",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-09-30T17:57:40.6738651Z"
+      },
+      {
+        "NewName": "Main_MenuGum.Exit_ButtonI",
+        "OldName": "Main_MenuGum.Start_ButtonI1",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T17:57:59.6801675Z"
+      },
+      {
+        "NewName": "Main_MenuGum.Setting_ButtonI",
+        "OldName": "Main_MenuGum.Start_ButtonI2",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T17:58:17.4701154Z"
+      },
+      {
+        "NewName": "Popap",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2026-09-30T18:35:09.4705399Z"
+      },
+      {
+        "NewName": "Popap (Container).CircleInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2026-09-30T18:36:41.3386572Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "Popap (Container).Circle CircleInstance in Popap (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2026-09-30T18:36:43.7212133Z"
+      },
+      {
+        "NewName": "Popap (Container).RectangleInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2026-09-30T18:36:49.6590004Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "Popap (Container).Rectangle RectangleInstance in Popap (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2026-09-30T18:40:43.8074407Z"
+      },
+      {
+        "NewName": "Popap (Container).RectangleInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2026-09-30T18:42:14.5916136Z"
+      },
+      {
+        "NewName": "Popap (Container).ButtonInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2026-09-30T18:45:45.1596737Z"
+      },
+      {
+        "NewName": "Popap (Container).PExit_ButtonI",
+        "OldName": "Popap (Container).ButtonInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T18:46:14.1943635Z"
+      },
+      {
+        "NewName": "Main_MenuGum.PopapInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-09-30T18:48:46.2322523Z"
+      },
+      {
+        "NewName": "Main_MenuGum.PopapSettingI",
+        "OldName": "Main_MenuGum.PopapInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T18:49:09.860975Z"
+      },
+      {
+        "NewName": "Popap (Container).PExit_ButtonI1",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2026-09-30T19:38:34.6314723Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "Popap (Container).Button PExit_ButtonI1 in Popap (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2026-09-30T19:38:49.1018039Z"
+      },
+      {
+        "NewName": "Clider",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2026-09-30T19:38:58.463103Z"
+      },
+      {
+        "NewName": "List",
+        "OldName": "Clider",
+        "ElementType": "Components",
+        "EventType": 2,
+        "TimestampUtc": "2026-09-30T19:39:35.4408615Z"
+      },
+      {
+        "NewName": "Button (Controls/ButtonStandard).ListInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2026-09-30T19:40:20.9829782Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "Button (Controls/ButtonStandard).List ListInstance in Button (Controls/ButtonStandard)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2026-09-30T19:40:29.8757417Z"
+      },
+      {
+        "NewName": "Popap (Container).ListInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2026-09-30T19:40:40.252604Z"
+      },
+      {
+        "NewName": "Popap (Container).Resolution",
+        "OldName": "Popap (Container).ListInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T19:42:25.4892251Z"
+      },
+      {
+        "NewName": "Popap (Container).Resolution",
+        "OldName": "Popap (Container).ListInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T19:42:25.4903143Z"
+      },
+      {
+        "NewName": "Popap (Container).Resolution",
+        "OldName": "Popap (Container).ListInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T19:42:25.4985705Z"
+      },
+      {
+        "NewName": "Popap (Container).ResolutionI",
+        "OldName": "Popap (Container).Resolution",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T19:42:32.0934147Z"
+      },
+      {
+        "NewName": "Popap (Container).ResolutionI",
+        "OldName": "Popap (Container).Resolution",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T19:42:32.0945402Z"
+      },
+      {
+        "NewName": "Popap (Container).ResolutionI",
+        "OldName": "Popap (Container).Resolution",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T19:42:32.1009656Z"
+      },
+      {
+        "NewName": "Popap (Container).Resolution_ListI",
+        "OldName": "Popap (Container).ResolutionI",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T19:42:47.4911361Z"
+      },
+      {
+        "NewName": "Popap (Container).Resolution_ListI",
+        "OldName": "Popap (Container).ResolutionI",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T19:42:47.4922496Z"
+      },
+      {
+        "NewName": "Popap (Container).Resolution_ListI",
+        "OldName": "Popap (Container).ResolutionI",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T19:42:47.5039359Z"
+      },
+      {
+        "NewName": "Popap (Container).Resolution_ListI",
+        "OldName": "Popap (Container).Resolution_ListI",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T19:45:09.3066587Z"
+      },
+      {
+        "NewName": "Popap (Container).Resolution_ListI",
+        "OldName": "Popap (Container).Resolution_ListI",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T19:45:09.3077241Z"
+      },
+      {
+        "NewName": "Popap (Container).Resolution_ListI",
+        "OldName": "Popap (Container).Resolution_ListI",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T19:45:09.3150007Z"
+      },
+      {
+        "NewName": "Popap (Container).Resolution_ListI1",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2026-09-30T20:20:48.584473Z"
+      },
+      {
+        "NewName": "Popap (Container).Language_ListI1",
+        "OldName": "Popap (Container).Resolution_ListI1",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T20:20:59.8673307Z"
+      },
+      {
+        "NewName": "Popap (Container).Language_ListI1",
+        "OldName": "Popap (Container).Resolution_ListI1",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T20:20:59.8686206Z"
+      },
+      {
+        "NewName": "Popap (Container).Language_ListI1",
+        "OldName": "Popap (Container).Resolution_ListI1",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T20:20:59.876774Z"
       }
     ]
   }

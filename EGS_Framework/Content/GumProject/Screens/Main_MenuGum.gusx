@@ -3,6 +3,7 @@
   <Name>Main_MenuGum</Name>
   <State>
     <Name>Default</Name>
+    <Variable Type="string" Name="Exit_ButtonI.Parent" SetsValue="true" />
     <Variable Type="string" Name="Exit_ButtonI.Text" SetsValue="true">
       <Value xsi:type="xsd:string">Exit</Value>
     </Variable>
@@ -24,7 +25,6 @@
     <Variable Type="PositionUnitType" Name="Exit_ButtonI.YUnits" SetsValue="true">
       <Value xsi:type="xsd:int">7</Value>
     </Variable>
-    <Variable Type="string" Name="Setting_ButtonI.Parent" SetsValue="true" />
     <Variable Type="string" Name="Setting_ButtonI.Text" SetsValue="true">
       <Value xsi:type="xsd:string">Setting</Value>
     </Variable>
@@ -47,7 +47,7 @@
       <Value xsi:type="xsd:int">7</Value>
     </Variable>
     <Variable Type="string" Name="Start_ButtonI.Text" SetsValue="true">
-      <Value xsi:type="xsd:string">Start Game</Value>
+      <Value xsi:type="xsd:string">Start</Value>
     </Variable>
     <Variable Type="float" Name="Start_ButtonI.X" SetsValue="true">
       <Value xsi:type="xsd:float">0</Value>
@@ -71,5 +71,6 @@
   <Instance Name="Start_ButtonI" BaseType="Button" />
   <Instance Name="Setting_ButtonI" BaseType="Button" />
   <Instance Name="Exit_ButtonI" BaseType="Button" />
+  <Instance Name="PopapSettingI" BaseType="Popap" />
   <Behaviors />
 </ScreenSave>

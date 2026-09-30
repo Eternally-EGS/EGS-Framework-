@@ -54,7 +54,7 @@
     "GenerateLoadGlobalContentCode": true
   },
   "SyncedProjects": [],
-  "StartUpScreen": "Screens\\Level1",
+  "StartUpScreen": "Screens\\Main_Menu",
   "ResolutionPresets": [],
   "PerformanceSettingsSave": {},
   "IgnoredDirectories": [],
@@ -86,6 +86,9 @@
     },
     {
       "Name": "Screens\\Level1"
+    },
+    {
+      "Name": "Screens\\Main_Menu"
     }
   ],
   "EntityReferences": [

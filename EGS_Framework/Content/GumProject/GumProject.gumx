@@ -57,6 +57,8 @@
   <CurrentLanguageIndex>0</CurrentLanguageIndex>
   <ScreenReference Name="GameScreenGum" />
   <ScreenReference Name="Level1Gum" />
+  <ScreenReference Name="Main_MenuGum" />
+  <ComponentReference Name="Button" />
   <ComponentReference Name="Controls/ButtonClose" />
   <ComponentReference Name="Controls/ButtonConfirm" />
   <ComponentReference Name="Controls/ButtonDeny" />
@@ -99,6 +101,8 @@
   <ComponentReference Name="Elements/PercentBar" />
   <ComponentReference Name="Elements/PercentBarIcon" />
   <ComponentReference Name="Elements/VerticalLines" />
+  <ComponentReference Name="List" />
+  <ComponentReference Name="Popap" />
   <ComponentReference Name="Styles" />
   <StandardElementReference Name="Circle" />
   <StandardElementReference Name="Component" />
