@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ComponentSave xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>Elements/Clider</Name>
+  <BaseType>Controls/Slider</BaseType>
+  <State>
+    <Name>Default</Name>
+    <Variable Type="State" Name="State" Category="States and Visibility" SetsValue="false">
+      <Value xsi:type="xsd:string">Default</Value>
+    </Variable>
+  </State>
+  <Instance Name="TrackInstance" BaseType="Container" DefinedByBase="true" />
+  <Instance Name="TrackBackground" BaseType="NineSlice" DefinedByBase="true" />
+  <Instance Name="ThumbInstance" BaseType="Controls/ButtonStandard" DefinedByBase="true" />
+  <Instance Name="FocusedIndicator" BaseType="NineSlice" DefinedByBase="true" />
+  <Behaviors />
+</ComponentSave>

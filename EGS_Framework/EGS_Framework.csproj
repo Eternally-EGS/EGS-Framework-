@@ -16,12 +16,21 @@
   <ItemGroup>
     <Compile Include="Core\**\*.cs" />
     <Compile Include="Forms\Components\ButtonForms.Generated.cs" />
+    <Compile Include="Forms\Components\Elements\CliderForms.Generated.cs" />
     <Compile Include="Forms\Components\ListForms.Generated.cs" />
     <Compile Include="Forms\Components\PopapForms.Generated.cs" />
     <Compile Include="Forms\Screens\Main_MenuGumForms.Generated.cs" />
     <Compile Include="GumRuntimes\ButtonRuntime.cs" />
     <Compile Include="GumRuntimes\ButtonRuntime.Generated.cs">
       <DependentUpon>ButtonRuntime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GumRuntimes\CheckBoxRuntime.cs" />
+    <Compile Include="GumRuntimes\CheckBoxRuntime.Generated.cs">
+      <DependentUpon>CheckBoxRuntime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GumRuntimes\Elements\CliderRuntime.cs" />
+    <Compile Include="GumRuntimes\Elements\CliderRuntime.Generated.cs">
+      <DependentUpon>CliderRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\ListRuntime.cs" />
     <Compile Include="GumRuntimes\ListRuntime.Generated.cs">
@@ -53,6 +62,10 @@
     <None Include="Content\GumProject\Components\Button.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Button</Name>
+    </None>
+    <None Include="Content\GumProject\Components\CheckBox.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>CheckBox</Name>
     </None>
     <None Include="Content\GumProject\Components\Controls\ButtonClose.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -193,6 +206,10 @@
     <None Include="Content\GumProject\Components\Elements\CautionLines.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>CautionLines</Name>
+    </None>
+    <None Include="Content\GumProject\Components\Elements\Clider.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Clider</Name>
     </None>
     <None Include="Content\GumProject\Components\Elements\Divider.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -79,22 +79,7 @@ namespace EGS_Framework
             base.Update(gameTime);
         }
 
-        /*
-        private void ChangeFullscreen() {
-            FlatRedBallServices.GraphicsOptions.IsFullScreen = !FlatRedBallServices.GraphicsOptions.IsFullScreen;
 
-            if (FlatRedBallServices.GraphicsOptions.IsFullScreen) 
-            {
-                var displayMode = FlatRedBallServices.GraphicsDevice.DisplayMode;
-                FlatRedBallServices.GraphicsOptions.SetFullScreen(displayMode.Width, displayMode.Height);
-            } 
-            else 
-            { 
-                FlatRedBallServices.GraphicsOptions.IsFullScreen = false;
-                FlatRedBallServices.GraphicsOptions.SetResolution(800, 600);
-            }
-        }
-        */
 
         protected override void Draw(GameTime gameTime)
         {

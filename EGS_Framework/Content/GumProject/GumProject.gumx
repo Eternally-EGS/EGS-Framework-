@@ -59,6 +59,7 @@
   <ScreenReference Name="Level1Gum" />
   <ScreenReference Name="Main_MenuGum" />
   <ComponentReference Name="Button" />
+  <ComponentReference Name="CheckBox" />
   <ComponentReference Name="Controls/ButtonClose" />
   <ComponentReference Name="Controls/ButtonConfirm" />
   <ComponentReference Name="Controls/ButtonDeny" />
@@ -94,6 +95,7 @@
   <ComponentReference Name="Controls/UserControl" />
   <ComponentReference Name="Controls/Window" />
   <ComponentReference Name="Elements/CautionLines" />
+  <ComponentReference Name="Elements/Clider" />
   <ComponentReference Name="Elements/Divider" />
   <ComponentReference Name="Elements/DividerHorizontal" />
   <ComponentReference Name="Elements/DividerVertical" />

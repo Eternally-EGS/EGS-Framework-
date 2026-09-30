@@ -490,6 +490,328 @@
         "ElementType": "Components",
         "EventType": 7,
         "TimestampUtc": "2026-09-30T20:20:59.876774Z"
+      },
+      {
+        "NewName": "Popap (Container).Language_ListI1",
+        "OldName": "Popap (Container).Language_ListI1",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T20:23:17.7890229Z"
+      },
+      {
+        "NewName": "Popap (Container).Language_ListI1",
+        "OldName": "Popap (Container).Language_ListI1",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T20:23:17.7901645Z"
+      },
+      {
+        "NewName": "Popap (Container).Language_ListI1",
+        "OldName": "Popap (Container).Language_ListI1",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T20:23:17.7984737Z"
+      },
+      {
+        "NewName": "Popap (Container).Language_ListII",
+        "OldName": "Popap (Container).Language_ListI1",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T20:23:45.6079179Z"
+      },
+      {
+        "NewName": "Popap (Container).Language_ListII",
+        "OldName": "Popap (Container).Language_ListI1",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T20:23:45.6091767Z"
+      },
+      {
+        "NewName": "Popap (Container).Language_ListII",
+        "OldName": "Popap (Container).Language_ListI1",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T20:23:45.6168892Z"
+      },
+      {
+        "NewName": "Popap (Container).Language_ListI",
+        "OldName": "Popap (Container).Language_ListII",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T20:24:02.0923685Z"
+      },
+      {
+        "NewName": "Popap (Container).Language_ListI",
+        "OldName": "Popap (Container).Language_ListII",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T20:24:02.0935318Z"
+      },
+      {
+        "NewName": "Popap (Container).Language_ListI",
+        "OldName": "Popap (Container).Language_ListII",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T20:24:02.1022655Z"
+      },
+      {
+        "NewName": "CheckBox",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2026-09-30T20:37:42.256623Z"
+      },
+      {
+        "NewName": "Popap (Container).CheckBoxInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2026-09-30T20:37:55.5842981Z"
+      },
+      {
+        "NewName": "Popap (Container).FullSreenBoxI",
+        "OldName": "Popap (Container).CheckBoxInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T20:39:10.9510361Z"
+      },
+      {
+        "NewName": "Popap (Container).FullSreenBoxI",
+        "OldName": "Popap (Container).CheckBoxInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T20:39:10.954771Z"
+      },
+      {
+        "NewName": "Popap (Container).FullSreenBoxI",
+        "OldName": "Popap (Container).CheckBoxInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T20:39:10.9624326Z"
+      },
+      {
+        "NewName": "Popap (Container).FullSreen_BoxI",
+        "OldName": "Popap (Container).FullSreenBoxI",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T20:40:22.3621057Z"
+      },
+      {
+        "NewName": "Popap (Container).FullSreen_BoxI",
+        "OldName": "Popap (Container).FullSreenBoxI",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T20:40:22.3634222Z"
+      },
+      {
+        "NewName": "Popap (Container).FullSreen_BoxI",
+        "OldName": "Popap (Container).FullSreenBoxI",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T20:40:22.3714862Z"
+      },
+      {
+        "NewName": "Popap (Container).FullSreen_BoxI",
+        "OldName": "Popap (Container).FullSreen_BoxI",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T20:40:25.3347053Z"
+      },
+      {
+        "NewName": "Popap (Container).FullSreen_BoxI",
+        "OldName": "Popap (Container).FullSreen_BoxI",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T20:40:25.3359813Z"
+      },
+      {
+        "NewName": "Popap (Container).FullSreen_BoxI",
+        "OldName": "Popap (Container).FullSreen_BoxI",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T20:40:25.3437687Z"
+      },
+      {
+        "NewName": "Elements/Clider",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2026-09-30T21:05:28.9795089Z"
+      },
+      {
+        "NewName": "Popap (Container).CliderInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2026-09-30T21:06:25.5854415Z"
+      },
+      {
+        "NewName": "Popap (Container).CliderInstance1",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2026-09-30T21:06:48.7531253Z"
+      },
+      {
+        "NewName": "Popap (Container).MusicVolume_SliderI",
+        "OldName": "Popap (Container).CliderInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T21:07:48.2659819Z"
+      },
+      {
+        "NewName": "Popap (Container).MusicVolume_SliderI",
+        "OldName": "Popap (Container).CliderInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T21:07:48.2673778Z"
+      },
+      {
+        "NewName": "Popap (Container).MusicVolume_SliderI",
+        "OldName": "Popap (Container).CliderInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T21:07:48.2760126Z"
+      },
+      {
+        "NewName": "Popap (Container).MusicVolume_SliderI",
+        "OldName": "Popap (Container).MusicVolume_SliderI",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T21:07:51.7063988Z"
+      },
+      {
+        "NewName": "Popap (Container).MusicVolume_SliderI",
+        "OldName": "Popap (Container).MusicVolume_SliderI",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T21:07:51.7076121Z"
+      },
+      {
+        "NewName": "Popap (Container).MusicVolume_SliderI",
+        "OldName": "Popap (Container).MusicVolume_SliderI",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T21:07:51.7162508Z"
+      },
+      {
+        "NewName": "Popap (Container).SoundVolume_SliderI",
+        "OldName": "Popap (Container).CliderInstance1",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T21:07:59.9274992Z"
+      },
+      {
+        "NewName": "Popap (Container).SoundVolume_SliderI",
+        "OldName": "Popap (Container).CliderInstance1",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T21:07:59.9286953Z"
+      },
+      {
+        "NewName": "Popap (Container).SoundVolume_SliderI",
+        "OldName": "Popap (Container).CliderInstance1",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T21:07:59.9359411Z"
+      },
+      {
+        "NewName": "Popap (Container).TextInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2026-09-30T21:08:05.0979781Z"
+      },
+      {
+        "NewName": "Popap (Container).TextInstance1",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2026-09-30T21:08:31.8163706Z"
+      },
+      {
+        "NewName": "Popap (Container).MusicVolume_TextI",
+        "OldName": "Popap (Container).TextInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T21:09:05.166394Z"
+      },
+      {
+        "NewName": "Popap (Container).MusicVolume_TextI",
+        "OldName": "Popap (Container).TextInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T21:09:05.1677802Z"
+      },
+      {
+        "NewName": "Popap (Container).MusicVolume_TextI",
+        "OldName": "Popap (Container).TextInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T21:09:05.1806056Z"
+      },
+      {
+        "NewName": "Popap (Container).SoundVolume_TextI",
+        "OldName": "Popap (Container).TextInstance1",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T21:09:14.1991976Z"
+      },
+      {
+        "NewName": "Popap (Container).SoundVolume_TextI",
+        "OldName": "Popap (Container).TextInstance1",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T21:09:14.2007014Z"
+      },
+      {
+        "NewName": "Popap (Container).SoundVolume_TextI",
+        "OldName": "Popap (Container).TextInstance1",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T21:09:14.2096471Z"
+      },
+      {
+        "NewName": "Popap (Container).MusicVolume_SliderI",
+        "OldName": "Popap (Container).MusicVolume_SliderI",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T21:27:21.5941488Z"
+      },
+      {
+        "NewName": "Popap (Container).MusicVolume_SliderI",
+        "OldName": "Popap (Container).MusicVolume_SliderI",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T21:27:21.5954911Z"
+      },
+      {
+        "NewName": "Popap (Container).MusicVolume_SliderI",
+        "OldName": "Popap (Container).MusicVolume_SliderI",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T21:27:21.60594Z"
+      },
+      {
+        "NewName": "Popap (Container).MusicVolume_TextI",
+        "OldName": "Popap (Container).MusicVolume_TextI",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T21:32:44.8740412Z"
+      },
+      {
+        "NewName": "Popap (Container).MusicVolume_TextI",
+        "OldName": "Popap (Container).MusicVolume_TextI",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T21:32:44.8754348Z"
+      },
+      {
+        "NewName": "Popap (Container).MusicVolume_TextI",
+        "OldName": "Popap (Container).MusicVolume_TextI",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T21:32:44.8834617Z"
       }
     ]
   }

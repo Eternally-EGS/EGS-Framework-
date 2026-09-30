@@ -4,14 +4,35 @@
   <BaseType>Container</BaseType>
   <State>
     <Name>Default</Name>
+    <Variable Type="string" Name="FullSreen_BoxI.Text" SetsValue="true">
+      <Value xsi:type="xsd:string">FullScreen</Value>
+    </Variable>
+    <Variable Type="float" Name="FullSreen_BoxI.X" SetsValue="true">
+      <Value xsi:type="xsd:float">68</Value>
+    </Variable>
+    <Variable Type="float" Name="FullSreen_BoxI.Y" SetsValue="true">
+      <Value xsi:type="xsd:float">110</Value>
+    </Variable>
     <Variable Type="float" Name="Height" SetsValue="true">
       <Value xsi:type="xsd:float">472</Value>
     </Variable>
-    <Variable Type="float" Name="Language_ListI1.X" SetsValue="true">
+    <Variable Type="float" Name="Language_ListI.X" SetsValue="true">
       <Value xsi:type="xsd:float">68</Value>
     </Variable>
-    <Variable Type="float" Name="Language_ListI1.Y" SetsValue="true">
+    <Variable Type="float" Name="Language_ListI.Y" SetsValue="true">
       <Value xsi:type="xsd:float">80</Value>
+    </Variable>
+    <Variable Type="float" Name="MusicVolume_SliderI.X" SetsValue="true">
+      <Value xsi:type="xsd:float">68</Value>
+    </Variable>
+    <Variable Type="float" Name="MusicVolume_SliderI.Y" SetsValue="true">
+      <Value xsi:type="xsd:float">150</Value>
+    </Variable>
+    <Variable Type="float" Name="MusicVolume_TextI.X" SetsValue="true">
+      <Value xsi:type="xsd:float">196</Value>
+    </Variable>
+    <Variable Type="float" Name="MusicVolume_TextI.Y" SetsValue="true">
+      <Value xsi:type="xsd:float">150</Value>
     </Variable>
     <Variable Type="string" Name="PExit_ButtonI.Text" SetsValue="true">
       <Value xsi:type="xsd:string">Exit</Value>
@@ -91,6 +112,18 @@
     <Variable Type="float" Name="Resolution_ListI.Y" SetsValue="true">
       <Value xsi:type="xsd:float">43</Value>
     </Variable>
+    <Variable Type="float" Name="SoundVolume_SliderI.X" SetsValue="true">
+      <Value xsi:type="xsd:float">68</Value>
+    </Variable>
+    <Variable Type="float" Name="SoundVolume_SliderI.Y" SetsValue="true">
+      <Value xsi:type="xsd:float">190</Value>
+    </Variable>
+    <Variable Type="float" Name="SoundVolume_TextI.X" SetsValue="true">
+      <Value xsi:type="xsd:float">196</Value>
+    </Variable>
+    <Variable Type="float" Name="SoundVolume_TextI.Y" SetsValue="true">
+      <Value xsi:type="xsd:float">190</Value>
+    </Variable>
     <Variable Type="State" Name="State" Category="States and Visibility" SetsValue="false">
       <Value xsi:type="xsd:string">Default</Value>
     </Variable>
@@ -123,6 +156,11 @@
   <Instance Name="RectangleInstance" BaseType="Rectangle" />
   <Instance Name="PExit_ButtonI" BaseType="Button" />
   <Instance Name="Resolution_ListI" BaseType="List" />
-  <Instance Name="Language_ListI1" BaseType="List" />
+  <Instance Name="Language_ListI" BaseType="List" />
+  <Instance Name="FullSreen_BoxI" BaseType="CheckBox" />
+  <Instance Name="MusicVolume_SliderI" BaseType="Elements/Clider" />
+  <Instance Name="SoundVolume_SliderI" BaseType="Elements/Clider" />
+  <Instance Name="MusicVolume_TextI" BaseType="Text" />
+  <Instance Name="SoundVolume_TextI" BaseType="Text" />
   <Behaviors />
 </ComponentSave>

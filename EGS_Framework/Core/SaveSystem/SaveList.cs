@@ -11,16 +11,12 @@ namespace EGS_Framework.Core.SaveSystem
             // System
             SaveManager.SetMain("CurrentSlot", SaveManager.CurrentSlot);
             SaveManager.SetMain("CurrentResolution", SettingManager.CurrentResolution);
-            //SaveManager.SetMain("CurrentLanguage", );
-            //SaveManager.SetMain("FullScreenEnable", );
-            //SaveManager.SetMain("MusicVolume", SaveManager.CurrentSlot);
-            //SaveManager.SetMain("SoundVolume", SaveManager.CurrentSlot);
-
-           SaveManager.SetSlot("step2", fdkf.step2);
-           SaveManager.SetSlot("step", fdkf.step);
-           //SaveManager.SetMain("MusicVolume", Settings.MusicVolume);
-            
-
+            SaveManager.SetMain("CurrentLanguage", SettingManager.CurrentLanguage);
+            SaveManager.SetMain("CurrentFullScreen", SettingManager.CurrentFullScreen);
+            SaveManager.SetMain("MusicVolume", SettingManager.CurrentMusicVolume);
+            SaveManager.SetMain("SoundVolume", SettingManager.CurrentSoundVolume);
+            SaveManager.SetSlot("step2", fdkf.step2);
+            SaveManager.SetSlot("step", fdkf.step);
         }
     }
 }
