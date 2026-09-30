@@ -1,0 +1,202 @@
+{
+  "UserEvents": {
+    "11a104084f656370d679ca9a5097a59f847ae9b4ae3b83b549f7c17dfcb4330e": [
+      {
+        "NewName": null,
+        "OldName": "Level1CopyGum",
+        "ElementType": "Screens",
+        "EventType": 1,
+        "TimestampUtc": "2026-09-30T16:50:06.629527Z"
+      },
+      {
+        "NewName": "Strat_Buton",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2026-09-30T16:53:16.776502Z"
+      },
+      {
+        "NewName": "Start_Button",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2026-09-30T16:56:51.1631175Z"
+      },
+      {
+        "NewName": "Start_Button1",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2026-09-30T16:59:03.430462Z"
+      },
+      {
+        "NewName": "Setting_Button",
+        "OldName": "Start_Button1",
+        "ElementType": "Components",
+        "EventType": 2,
+        "TimestampUtc": "2026-09-30T16:59:30.7510488Z"
+      },
+      {
+        "NewName": "Main_MenuGum.Setting_ButtonInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-09-30T17:01:02.8093875Z"
+      },
+      {
+        "NewName": "Main_MenuGum.Start_ButtonInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-09-30T17:01:09.6914719Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "Start_Button",
+        "ElementType": "Components",
+        "EventType": 1,
+        "TimestampUtc": "2026-09-30T17:03:04.3265943Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "Main_MenuGum.Start_Button Start_ButtonInstance in Main_MenuGum",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-09-30T17:03:20.5964481Z"
+      },
+      {
+        "NewName": "Main_MenuGum.Setting_ButtonI",
+        "OldName": "Main_MenuGum.Setting_ButtonInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T17:03:34.4173623Z"
+      },
+      {
+        "NewName": "Main_MenuGum.Setting_ButtonI1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-09-30T17:04:20.0898835Z"
+      },
+      {
+        "NewName": "Main_MenuGum.Setting_ButtonI2",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-09-30T17:04:21.4482498Z"
+      },
+      {
+        "NewName": "Main_MenuGum.Start_Button",
+        "OldName": "Main_MenuGum.Setting_ButtonI1",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T17:04:32.4366389Z"
+      },
+      {
+        "NewName": "Main_MenuGum.Start_ButtonI",
+        "OldName": "Main_MenuGum.Start_Button",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T17:05:11.8576293Z"
+      },
+      {
+        "NewName": "Main_MenuGum.Exit_ButtonI",
+        "OldName": "Main_MenuGum.Setting_ButtonI2",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T17:05:24.0831338Z"
+      },
+      {
+        "NewName": "Button",
+        "OldName": "Setting_Button",
+        "ElementType": "Components",
+        "EventType": 2,
+        "TimestampUtc": "2026-09-30T17:05:33.9385811Z"
+      },
+      {
+        "NewName": "Main_MenuGum.RectangleInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-09-30T17:06:29.2437518Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "Main_MenuGum.Button Exit_ButtonI in Main_MenuGum",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-09-30T17:08:08.3643484Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "Main_MenuGum.Button Setting_ButtonI in Main_MenuGum",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-09-30T17:08:08.3668417Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "Main_MenuGum.Button Start_ButtonI in Main_MenuGum",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-09-30T17:08:08.376074Z"
+      },
+      {
+        "NewName": "Button",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2026-09-30T17:08:20.2272435Z"
+      },
+      {
+        "NewName": "Main_MenuGum.ButtonInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-09-30T17:08:33.2725242Z"
+      },
+      {
+        "NewName": "Main_MenuGum.Start_ButtonI",
+        "OldName": "Main_MenuGum.ButtonInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T17:08:44.0501921Z"
+      },
+      {
+        "NewName": "Main_MenuGum.Start_ButtonI1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-09-30T17:08:46.7752788Z"
+      },
+      {
+        "NewName": "Main_MenuGum.Start_ButtonI2",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-09-30T17:08:47.1467394Z"
+      },
+      {
+        "NewName": "Main_MenuGum.Exit_ButtonI",
+        "OldName": "Main_MenuGum.Start_ButtonI1",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T17:08:56.9385833Z"
+      },
+      {
+        "NewName": "Main_MenuGum.Setting_ButtonI",
+        "OldName": "Main_MenuGum.Start_ButtonI2",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2026-09-30T17:09:21.9051463Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "Main_MenuGum.Rectangle RectangleInstance in Main_MenuGum",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-09-30T17:10:45.809555Z"
+      }
+    ]
+  }
+}

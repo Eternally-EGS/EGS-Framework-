@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScreenSave xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>Main_MenuGum</Name>
+  <State>
+    <Name>Default</Name>
+    <Variable Type="string" Name="Exit_ButtonI.Text" SetsValue="true">
+      <Value xsi:type="xsd:string">Exit</Value>
+    </Variable>
+    <Variable Type="float" Name="Exit_ButtonI.X" SetsValue="true">
+      <Value xsi:type="xsd:float">0</Value>
+    </Variable>
+    <Variable Type="HorizontalAlignment" Name="Exit_ButtonI.XOrigin" SetsValue="true">
+      <Value xsi:type="xsd:int">1</Value>
+    </Variable>
+    <Variable Type="PositionUnitType" Name="Exit_ButtonI.XUnits" SetsValue="true">
+      <Value xsi:type="xsd:int">6</Value>
+    </Variable>
+    <Variable Type="float" Name="Exit_ButtonI.Y" SetsValue="true">
+      <Value xsi:type="xsd:float">50</Value>
+    </Variable>
+    <Variable Type="VerticalAlignment" Name="Exit_ButtonI.YOrigin" SetsValue="true">
+      <Value xsi:type="xsd:int">1</Value>
+    </Variable>
+    <Variable Type="PositionUnitType" Name="Exit_ButtonI.YUnits" SetsValue="true">
+      <Value xsi:type="xsd:int">7</Value>
+    </Variable>
+    <Variable Type="string" Name="Setting_ButtonI.Parent" SetsValue="true" />
+    <Variable Type="string" Name="Setting_ButtonI.Text" SetsValue="true">
+      <Value xsi:type="xsd:string">Setting</Value>
+    </Variable>
+    <Variable Type="float" Name="Setting_ButtonI.X" SetsValue="true">
+      <Value xsi:type="xsd:float">0</Value>
+    </Variable>
+    <Variable Type="HorizontalAlignment" Name="Setting_ButtonI.XOrigin" SetsValue="true">
+      <Value xsi:type="xsd:int">1</Value>
+    </Variable>
+    <Variable Type="PositionUnitType" Name="Setting_ButtonI.XUnits" SetsValue="true">
+      <Value xsi:type="xsd:int">6</Value>
+    </Variable>
+    <Variable Type="float" Name="Setting_ButtonI.Y" SetsValue="true">
+      <Value xsi:type="xsd:float">0</Value>
+    </Variable>
+    <Variable Type="VerticalAlignment" Name="Setting_ButtonI.YOrigin" SetsValue="true">
+      <Value xsi:type="xsd:int">1</Value>
+    </Variable>
+    <Variable Type="PositionUnitType" Name="Setting_ButtonI.YUnits" SetsValue="true">
+      <Value xsi:type="xsd:int">7</Value>
+    </Variable>
+    <Variable Type="string" Name="Start_ButtonI.Text" SetsValue="true">
+      <Value xsi:type="xsd:string">Start Game</Value>
+    </Variable>
+    <Variable Type="float" Name="Start_ButtonI.X" SetsValue="true">
+      <Value xsi:type="xsd:float">0</Value>
+    </Variable>
+    <Variable Type="HorizontalAlignment" Name="Start_ButtonI.XOrigin" SetsValue="true">
+      <Value xsi:type="xsd:int">1</Value>
+    </Variable>
+    <Variable Type="PositionUnitType" Name="Start_ButtonI.XUnits" SetsValue="true">
+      <Value xsi:type="xsd:int">6</Value>
+    </Variable>
+    <Variable Type="float" Name="Start_ButtonI.Y" SetsValue="true">
+      <Value xsi:type="xsd:float">-50</Value>
+    </Variable>
+    <Variable Type="VerticalAlignment" Name="Start_ButtonI.YOrigin" SetsValue="true">
+      <Value xsi:type="xsd:int">1</Value>
+    </Variable>
+    <Variable Type="PositionUnitType" Name="Start_ButtonI.YUnits" SetsValue="true">
+      <Value xsi:type="xsd:int">7</Value>
+    </Variable>
+  </State>
+  <Instance Name="Start_ButtonI" BaseType="Button" />
+  <Instance Name="Setting_ButtonI" BaseType="Button" />
+  <Instance Name="Exit_ButtonI" BaseType="Button" />
+  <Behaviors />
+</ScreenSave>
