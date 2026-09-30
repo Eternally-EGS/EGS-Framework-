@@ -15,6 +15,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Core\**\*.cs" />
+    <Compile Include="Forms\Screens\Level1CopyGumForms.Generated.cs" />
+    <Compile Include="GumRuntimes\Level1CopyGumRuntime.cs" />
+    <Compile Include="GumRuntimes\Level1CopyGumRuntime.Generated.cs">
+      <DependentUpon>Level1CopyGumRuntime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Main_menu.cs" />
+    <Compile Include="Screens\Main_menu.Generated.cs">
+      <DependentUpon>Main_menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="System\**\*.cs" />
     <None Remove="Icon.ico" />
     <None Remove="Icon.bmp" />
@@ -284,6 +293,10 @@
     <None Include="Content\GumProject\Screens\GameScreenGum.gusx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>GameScreenGum</Name>
+    </None>
+    <None Include="Content\GumProject\Screens\Level1CopyGum.gusx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Level1CopyGum</Name>
     </None>
     <None Include="Content\GumProject\Screens\Level1Gum.gusx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
