@@ -196,6 +196,13 @@
         "ElementType": "Screens",
         "EventType": 6,
         "TimestampUtc": "2026-09-30T17:10:45.809555Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "Level1CopyGum",
+        "ElementType": "Screens",
+        "EventType": 1,
+        "TimestampUtc": "2026-09-30T17:41:16.5003081Z"
       }
     ]
   }

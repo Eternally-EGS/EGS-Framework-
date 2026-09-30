@@ -86,9 +86,6 @@
     },
     {
       "Name": "Screens\\Level1"
-    },
-    {
-      "Name": "Screens\\Main_menu"
     }
   ],
   "EntityReferences": [

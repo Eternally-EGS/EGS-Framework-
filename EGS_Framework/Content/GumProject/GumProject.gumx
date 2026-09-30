@@ -56,7 +56,6 @@
   <ShowLocalizationInGum>true</ShowLocalizationInGum>
   <CurrentLanguageIndex>0</CurrentLanguageIndex>
   <ScreenReference Name="GameScreenGum" />
-  <ScreenReference Name="Level1CopyGum" />
   <ScreenReference Name="Level1Gum" />
   <ComponentReference Name="Controls/ButtonClose" />
   <ComponentReference Name="Controls/ButtonConfirm" />
