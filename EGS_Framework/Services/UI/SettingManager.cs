@@ -90,12 +90,13 @@ namespace EGS_Framework.Services.UI
             AddIfSupported("1366x768",  1366, 768);
             AddIfSupported("1280x720",  1280, 720);
             AddIfSupported("800x600",   800,  600);
+            Resolution.ListBox.Height = 20 * 5;
 
             if (CurrentResolution >= Resolution.Items.Count)
             {
                 CurrentResolution = 0; 
             }
-
+            
             Resolution.SelectedIndex = CurrentResolution;
             Resolution.SelectionChanged += (sender, args) => HandleResolutionChange(Resolution);
             HandleResolutionChange(Resolution);
@@ -104,6 +105,8 @@ namespace EGS_Framework.Services.UI
             Language.Items.Clear();
             Language.Items.Add("Russian");
             Language.Items.Add("English");
+            Language.ListBox.Height = 40;
+
             Language.SelectedIndex = CurrentLanguage;
             Language.SelectionChanged += (sender, args) => HandleLanguageChange(Language);
             HandleLanguageChange(Language);

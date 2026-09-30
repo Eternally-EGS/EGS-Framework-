@@ -22,6 +22,7 @@
     <Variable Type="float" Name="Language_ListI.Y" SetsValue="true">
       <Value xsi:type="xsd:float">80</Value>
     </Variable>
+    <Variable Type="float?" Name="MusicVolume_SliderI.MaxHeight" SetsValue="true" />
     <Variable Type="float" Name="MusicVolume_SliderI.X" SetsValue="true">
       <Value xsi:type="xsd:float">68</Value>
     </Variable>
@@ -105,6 +106,12 @@
     </Variable>
     <Variable Type="PositionUnitType" Name="RectangleInstance.YUnits" SetsValue="true">
       <Value xsi:type="xsd:int">7</Value>
+    </Variable>
+    <Variable Type="DimensionUnitType" Name="Resolution_ListI.HeightUnits" SetsValue="true">
+      <Value xsi:type="xsd:int">0</Value>
+    </Variable>
+    <Variable Type="DimensionUnitType" Name="Resolution_ListI.WidthUnits" SetsValue="true">
+      <Value xsi:type="xsd:int">0</Value>
     </Variable>
     <Variable Type="float" Name="Resolution_ListI.X" SetsValue="true">
       <Value xsi:type="xsd:float">68</Value>
