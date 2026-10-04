@@ -48,7 +48,8 @@ namespace EGS_Framework.Core.Debug
 
             currentText.X = Camera.Main.X - (Camera.Main.OrthogonalWidth / 2f) + xoffset;
             currentText.Y = Camera.Main.Y + (Camera.Main.OrthogonalHeight / 2f) + yoffset - lineSpacing;
-
+            currentText.Z = Camera.Main.Z - 1f;
+            
             _currentLineIndex++;
         }
 
@@ -77,6 +78,7 @@ namespace EGS_Framework.Core.Debug
 
             currentText.X = xoffset;
             currentText.Y = yoffset;
+            currentText.Z = Camera.Main.Z - 1f;
 
             _currentLineIndex_0++;
         }
@@ -149,6 +151,7 @@ namespace EGS_Framework.Core.Debug
             Rect.Height = height;
             Rect.X = startX;
             Rect.Y = startY;
+            Rect.Z = Camera.Main.Z - 1f;
             Rect.Color = color;
         }
     }
@@ -242,7 +245,7 @@ namespace EGS_Framework.Core.Debug
                 
                 currentText.HorizontalAlignment = FlatRedBall.Graphics.HorizontalAlignment.Left;
                 currentText.VerticalAlignment = FlatRedBall.Graphics.VerticalAlignment.Top;
-                currentText.Z = 12f; 
+                currentText.Z = Camera.Main.Z - 1f;
 
                 _windowTexts.Add(currentText);
             }
@@ -257,6 +260,7 @@ namespace EGS_Framework.Core.Debug
 
             currentText.X = xoffset;
             currentText.Y = yoffset;
+            currentText.Z = Camera.Main.Z - 1f;
 
             TextW = currentText.Width;
             TextH = currentText.Height;
